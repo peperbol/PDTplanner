@@ -1,0 +1,5 @@
+<ul class="program">
+  <li *ngFor="let yearElement of program">
+    <year [year]="yearElement" (moveBackEvent)="moveCourseBack($event.index, $event.year)" (moveForwardEvent)="moveCourseForward($event.index, $event.year)"></year>
+  </li>
+</ul>

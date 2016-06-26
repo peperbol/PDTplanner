@@ -1,0 +1,71 @@
+{"data":
+[
+  {
+    "order": 1,
+    "courses":[
+      {
+        "id":1,
+        "name":"vak 1",
+        "prerequisites":[],
+        "start":1,
+        "duration":2
+      },
+      {
+        "id":2,
+        "name":"vak 2",
+        "prerequisites":[],
+        "start":1,
+        "duration":2
+
+      },
+      {
+        "id":3,
+        "name":"vak 3",
+        "prerequisites":[],
+        "start":3,
+        "duration":2
+      }
+    ]
+  },
+  {
+    "order": 2,
+    "courses":[
+      {
+        "id":4,
+        "name":"vak 4",
+        "prerequisites":[1,3],
+        "start":3,
+        "duration":2
+      },
+      {
+        "id":5,
+        "name":"vak 5",
+        "prerequisites":[2],
+        "start":1,
+        "duration":2
+      }
+    ]
+  },
+  {
+    "order": 3,
+    "courses":[
+      {
+        "id":6,
+        "name":"vak 6",
+        "prerequisites":[2,4],
+        "start":1,
+        "duration":1
+
+      },
+      {
+        "id":7,
+        "name":"vak 7",
+        "prerequisites":[-1],
+        "start":1,
+        "duration":2
+
+      }
+    ]
+  }
+]
+}

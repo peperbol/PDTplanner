@@ -1,0 +1,10 @@
+<div [ngStyle]="{
+  'margin-left': (25* (course.start-1)) +1+'%',
+  'min-width': 25* (course.duration) - 2+'%',
+  'width': 25* (course.duration) - 2+'%'
+}">
+  <button class="fa fa-chevron-left" (click)="moveBack()"></button>
+  <span>{{course.name}}</span>
+
+  <button class="fa fa-chevron-right" (click)="moveForward()"></button>
+</div>
