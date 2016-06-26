@@ -1,0 +1,242 @@
+{"data":
+[
+  {
+    "order": 1,
+    "courses":[
+      {
+        "id":1,
+        "name":"3D-Modeling 1",
+        "prerequisites":[],
+        "start":3,
+        "duration":2,
+        "studypoints":3,
+        "url": "https://bamaflexweb.kdg.be/BMFUIDetailxOLOD.aspx?a=63330&b=1&c=1"
+      },
+      {
+        "id":2,
+        "name":"Analoge Technologie Theorie 1",
+        "prerequisites":[],
+        "start":1,
+        "duration":4,
+        "studypoints":2,
+        "url": "https://bamaflexweb.kdg.be/BMFUIDetailxOLOD.aspx?a=63332&b=1&c=1"
+
+      },
+      {
+        "id":3,
+        "name":"Analoge Technologie Labo 1",
+        "prerequisites":[],
+        "start":1,
+        "duration":4,
+        "studypoints":2,
+        "url": "https://bamaflexweb.kdg.be/BMFUIDetailxOLOD.aspx?a=63333&b=1&c=1"
+
+      },
+      {
+        "id":4,
+        "name":"Animation 1",
+        "prerequisites":[],
+        "start":1,
+        "duration":1,
+        "studypoints":3,
+        "url": "https://bamaflexweb.kdg.be/BMFUIDetailxOLOD.aspx?a=63319&b=1&c=1"
+      },
+      {
+        "id":5,
+        "name":"Audio Video Theorie 1",
+        "prerequisites":[],
+        "start":3,
+        "duration":2,
+        "studypoints":3,
+        "url": "https://bamaflexweb.kdg.be/BMFUIDetailxOLOD.aspx?a=63322&b=1&c=1"
+      },
+      {
+        "id":6,
+        "name":"Audio Video Labo 1",
+        "prerequisites":[],
+        "start":4,
+        "duration":1,
+        "studypoints":2,
+        "url": "https://bamaflexweb.kdg.be/BMFUIDetailxOLOD.aspx?a=63323&b=1&c=1"
+      },
+      {
+        "id":7,
+        "name":"Beeldtaal 1",
+        "prerequisites":[],
+        "start":1,
+        "duration":1,
+        "studypoints":2,
+        "url": "https://bamaflexweb.kdg.be/BMFUIDetailxOLOD.aspx?a=63343&b=1&c=1"
+      },
+      {
+        "id":8,
+        "name":"Videomontage 1",
+        "prerequisites":[],
+        "start":3,
+        "duration":1,
+        "studypoints":2,
+        "url": "https://bamaflexweb.kdg.be/BMFUIDetailxOLOD.aspx?a=63344&b=1&c=1"
+      },
+      {
+        "id":9,
+        "name":"Computernetwerken 1",
+        "prerequisites":[],
+        "start":2,
+        "duration":2,
+        "studypoints":3,
+        "url": "https://bamaflexweb.kdg.be/BMFUIDetailxOLOD.aspx?a=63341&b=1&c=1"
+      },
+      {
+        "id":10,
+        "name":"Usability 1",
+        "prerequisites":[],
+        "start":2,
+        "duration":1,
+        "studypoints":2,
+        "url": "https://bamaflexweb.kdg.be/BMFUIDetailxOLOD.aspx?a=63307&b=1&c=1"
+      },
+      {
+        "id":11,
+        "name":"Web Graphics 1",
+        "prerequisites":[],
+        "start":4,
+        "duration":1,
+        "studypoints":2,
+        "url": "https://bamaflexweb.kdg.be/BMFUIDetailxOLOD.aspx?a=63308&b=1&c=1"
+      },
+      {
+        "id":12,
+        "name":"Digitale Technologie Theorie 1",
+        "prerequisites":[],
+        "start":1,
+        "duration":4,
+        "studypoints":2,
+        "url": "https://bamaflexweb.kdg.be/BMFUIDetailxOLOD.aspx?a=63335&b=1&c=1"
+      },
+      {
+        "id":13,
+        "name":"Digitale Technologie Labo 1",
+        "prerequisites":[],
+        "start":1,
+        "duration":4,
+        "studypoints":2,
+        "url": "https://bamaflexweb.kdg.be/BMFUIDetailxOLOD.aspx?a=63336&b=1&c=1"
+      },
+      {
+        "id":14,
+        "name":"Engels 1",
+        "prerequisites":[],
+        "start":3,
+        "duration":2,
+        "studypoints":3,
+        "url": "https://bamaflexweb.kdg.be/BMFUIDetailxOLOD.aspx?a=63324&b=1&c=1"
+      },
+      {
+        "id":15,
+        "name":"Photoshop",
+        "prerequisites":[],
+        "start":1,
+        "duration":1,
+        "studypoints":3,
+        "url": "https://bamaflexweb.kdg.be/BMFUIDetailxOLOD.aspx?a=63317&b=1&c=1"
+      },
+      {
+        "id":16,
+        "name":"Programmeren 1",
+        "prerequisites":[],
+        "start":1,
+        "duration":3,
+        "studypoints":5,
+        "url": "https://bamaflexweb.kdg.be/BMFUIDetailxOLOD.aspx?a=63309&b=1&c=1"
+      },
+      {
+        "id":17,
+        "name":"Project Web 1",
+        "prerequisites":[],
+        "start":3,
+        "duration":1,
+        "studypoints":4,
+        "url": "https://bamaflexweb.kdg.be/BMFUIDetailxOLOD.aspx?a=63329&b=1&c=1"
+      },
+      {
+        "id":18,
+        "name":"Projectwerking 1",
+        "prerequisites":[],
+        "start":1,
+        "duration":2,
+        "studypoints":3,
+        "url": "https://bamaflexweb.kdg.be/BMFUIDetailxOLOD.aspx?a=63342&b=1&c=1"
+      },
+      {
+        "id":18,
+        "name":"Web Scripting 1",
+        "prerequisites":[],
+        "start":4,
+        "duration":1,
+        "studypoints":3,
+        "url": "https://bamaflexweb.kdg.be/BMFUIDetailxOLOD.aspx?a=63328&b=1&c=1"
+      },
+      {
+        "id":18,
+        "name":"Web Standards 1",
+        "prerequisites":[],
+        "start":1,
+        "duration":1,
+        "studypoints":3,
+        "url": "https://bamaflexweb.kdg.be/BMFUIDetailxOLOD.aspx?a=63318&b=1&c=1"
+      },
+      {
+        "id":18,
+        "name":"Wiskunde 1",
+        "prerequisites":[],
+        "start":1,
+        "duration":3,
+        "studypoints":6,
+        "url": "https://bamaflexweb.kdg.be/BMFUIDetailxOLOD.aspx?a=63320&b=1&c=1"
+      }
+    ]
+  },
+  {
+    "order": 2,
+    "courses":[
+      {
+        "id":19,
+        "name":"Besturingssystemen 2",
+        "prerequisites":[],
+        "start":3,
+        "duration":2,
+        "studypoints":3,
+        "url": "https://bamaflexweb.kdg.be/BMFUIDetailxOLOD.aspx?a=63310&b=1&c=1"
+      },
+      {
+        "id":5,
+        "name":"vak 5",
+        "prerequisites":[2],
+        "start":1,
+        "duration":2
+      }
+    ]
+  },
+  {
+    "order": 3,
+    "courses":[
+      {
+        "id":6,
+        "name":"vak 6",
+        "prerequisites":[2,4],
+        "start":1,
+        "duration":1
+
+      },
+      {
+        "id":7,
+        "name":"vak 7",
+        "prerequisites":[-1],
+        "start":1,
+        "duration":2
+
+      }
+    ]
+  }
+]
+}

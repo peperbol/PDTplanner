@@ -5,6 +5,7 @@ export class Course {
     public prerequisites : number[],
     public start : number,
     public duration : number,
-    public studypoints : number
+    public studypoints : number,
+    public url : string
   ) { }
 }

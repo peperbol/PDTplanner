@@ -1,23 +1,49 @@
 body{
   font-family: helvetica, arial, sans-serif
 }
-career{
-  width: 100%;
-  position: relative;
+career, myapp {
   display: block;
 }
+career{
+  position: relative;
+  display: block;
+  white-space: nowrap;
+  text-align: center;
+}
+
+career>*{
+  vertical-align: top;
+}
+
+career>ul{
+  display: inline-flex;
+  margin: auto;
+}
+
+.tools{
+  display: inline-block;
+  font-size: 30px;
+  width: 35px;
+}
+
+.tools>button.fa {
+  color: MediumPurple;
+    display: block;
+}
+.tools>button.fa.disabled {
+  color: lavender;
+  cursor: default;
+}
+
 career ul{
   list-style: none;
   padding: 0;
 }
-career>ul{
-  display: flex;
-  width: 90%;
-  margin: auto;
-}
 career>ul>li{
   flex-grow: 1;
+    flex-s: 1;
   position: relative;
+  min-width: 300px;
 }
 career>ul>li::after,
 career>ul>li:first-child::before{
@@ -74,8 +100,13 @@ year>ul>li{
 }
 course{
 
-  width: 100%;
-  display: block;
+  width: 96%;
+  display: flex;
+  margin: 0 auto;
+}
+course>*{
+  flex-basis: 0;
+  width: 0;
 }
 course>div{
   background-color: lavender;
@@ -86,9 +117,11 @@ course>div{
   position: relative;
   color: MediumPurple ;
   display: inline-block;
+  z-index:5;
 
 }
-course:hover>* {
+course:hover>div,
+course>div:hover {
   background-color:  MediumPurple;
   color: lavender ;
   width: auto !important;
@@ -136,18 +169,4 @@ career>ul>li:last-child course button.fa~button{
 }
 button{
   cursor: pointer;
-}
-.tools{
-  position: absolute;
-  display: block;
-  top:0;
-  left:95%;
-  font-size: 30px;}
-.tools>button.fa {
-color: MediumPurple;
-}
-.tools>button.fa.disabled {
-color: lavender;
-
-  cursor: default;
 }

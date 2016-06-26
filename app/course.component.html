@@ -1,10 +1,8 @@
-<div [ngStyle]="{
-  'margin-left': (25* (course.start-1)) +1+'%',
-  'min-width': 25* (course.duration) - 2+'%',
-  'width': 25* (course.duration) - 2+'%'
-}">
+<i [ngStyle]="{'flex-grow':(course.start-1)}"></i>
+<div [ngStyle]="{'flex-grow':(course.duration)}">
   <button class="fa fa-chevron-left" (click)="moveBack()"></button>
   <span>{{course.name}}</span>
 
   <button class="fa fa-chevron-right" (click)="moveForward()"></button>
 </div>
+<i [ngStyle]="{'flex-grow':5-course.start-course.duration}"></i>

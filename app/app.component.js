@@ -15,7 +15,7 @@ var AppComponent = (function () {
     }
     AppComponent = __decorate([
         core_1.Component({
-            selector: 'my-app',
+            selector: 'myapp',
             templateUrl: 'app/app.component.html',
             directives: [studycareer_component_1.StudyCareerComponent]
         }), 
