@@ -10,10 +10,10 @@ import './rxjs-operators';
 export class ProgramService {
   constructor (private http: Http) {}
 
-  private programUrl = 'data/mct.json';  // URL to web API
+  private programUrl = 'data/';  // URL to web API
 
-  getProgram (): Observable<Year[]> {
-    return this.http.get(this.programUrl)
+  getProgram (name:string): Observable<Year[]> {
+    return this.http.get(this.programUrl+name+'.json')
                     .map(this.extractData)
                     .catch(this.handleError);
   }

@@ -33,14 +33,21 @@ export class StudyCareerComponent implements OnInit{
         toY.courses.push(course);
       }
   }
-  getYearIndex(year:Year){
+  getYearIndex(year:Year) : number{
     return this.program.indexOf(year);
   }
-
+  addYear(){
+    this.program.push({'order':this.program.length+1,'courses': []});
+  }
+  deleteYear(){
+    if(this.program.length <= 1) return;
+    let lastY = this.program.pop();
+    this.program[this.program.length - 1].courses = this.program[this.program.length - 1].courses.concat(lastY.courses);
+  }
   ngOnInit() { this.loadProgram(); }
 
   loadProgram(){
-    this.programService.getProgram()
+    this.programService.getProgram('mct-web')
                        .subscribe(
                           result => this.program = result,
                           error =>  this.errorMessage = <any>error

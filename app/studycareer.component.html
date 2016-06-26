@@ -1,3 +1,8 @@
+
+<div class="tools">
+  <button class="fa fa-plus-square-o" (click)="addYear()"></button>
+  <button class="fa fa-trash-o" (click)="deleteYear()" [class.disabled]="program&&program.length<=1"></button>
+</div>
 <ul class="program">
   <li *ngFor="let yearElement of program">
     <year [year]="yearElement" (moveBackEvent)="moveCourseBack($event.index, $event.year)" (moveForwardEvent)="moveCourseForward($event.index, $event.year)"></year>

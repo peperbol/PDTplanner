@@ -34,10 +34,19 @@ var StudyCareerComponent = (function () {
     StudyCareerComponent.prototype.getYearIndex = function (year) {
         return this.program.indexOf(year);
     };
+    StudyCareerComponent.prototype.addYear = function () {
+        this.program.push({ 'order': this.program.length + 1, 'courses': [] });
+    };
+    StudyCareerComponent.prototype.deleteYear = function () {
+        if (this.program.length <= 1)
+            return;
+        var lastY = this.program.pop();
+        this.program[this.program.length - 1].courses = this.program[this.program.length - 1].courses.concat(lastY.courses);
+    };
     StudyCareerComponent.prototype.ngOnInit = function () { this.loadProgram(); };
     StudyCareerComponent.prototype.loadProgram = function () {
         var _this = this;
-        this.programService.getProgram()
+        this.programService.getProgram('mct-web')
             .subscribe(function (result) { return _this.program = result; }, function (error) { return _this.errorMessage = error; });
     };
     StudyCareerComponent = __decorate([
