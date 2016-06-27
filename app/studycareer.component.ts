@@ -14,8 +14,7 @@ export class StudyCareerComponent implements OnInit{
   program: Year[];
   errorMessage: string;
   me = this;
-  validating :boolean;
-  validatinglock :boolean;
+  
   verticalscroll = 0;
   pageheight = 0;
   windowheight = 0;

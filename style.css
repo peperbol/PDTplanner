@@ -42,9 +42,10 @@ career>ul{
   cursor: default;
 }
 
-.tools>button.fa.fa-check:not(.fa-check-square) {
+.tools>button.fa.fa-check {
   font-size: 0.8em;
   margin-top: 2px;
+  cursor: default;
 }
 .tools>button.fa.fa-check {
   color: Tomato ;
@@ -227,14 +228,14 @@ career>ul>li:last-child course button.fa~button{
 button{
   cursor: pointer;
 }
-.validate .invalid{
+course>div.invalid{
   background-color: LightPink   ;
 }
 
-.validate course>div.invalid *{
+course>div.invalid *{
   color: FireBrick  ;
 }
 
-.validate course>div.invalid a:hover{
+course>div.invalid a:hover{
   color: black  ;
 }
