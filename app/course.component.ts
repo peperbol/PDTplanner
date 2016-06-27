@@ -2,6 +2,7 @@ import { Component, Input,Output,EventEmitter } from '@angular/core';
 import { Course } from './course';
 import { StudyCareerComponent } from './studycareer.component';
 import {NgClass} from '@angular/common';
+import {PrerequisitesService} from './prerequisites.service';
 
 @Component({
   selector: 'course',
@@ -15,6 +16,23 @@ export class CourseComponent {
   @Output() moveForwardEvent = new EventEmitter();
   @Input() year :number;
   @Input() careerComponent: StudyCareerComponent;
+
+  constructor (private prerequisitesService : PrerequisitesService ){}
+
+  isGood(){
+   return  (this.prerequisitesService.prerequisites.some(e=>e == this.course.id)&& this.prerequisitesService.year> this.year) ||
+        (this.prerequisitesService.equalrequisites.some(e=>e == this.course.id)&& this.prerequisitesService.year >= this.year);
+  }
+  isWrong(){
+   return  (this.prerequisitesService.prerequisites.some(e=>e == this.course.id)&& this.prerequisitesService.year <= this.year) ||
+        (this.prerequisitesService.equalrequisites.some(e=>e == this.course.id)&& this.prerequisitesService.year < this.year);
+  }
+  mouseEnter(){
+    this.prerequisitesService.set(this.course.prerequisites,this.course.equalrequisites,this.year);
+  }
+  mouseLeave(){
+    this.prerequisitesService.clear();
+  }
 
   isFinalYear():boolean{
     return this.course.prerequisites.some(e=>e<0);

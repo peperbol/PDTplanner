@@ -11,6 +11,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var program_service_1 = require('./program.service');
 var year_component_1 = require('./year.component');
+var prerequisites_service_1 = require('./prerequisites.service');
 var StudyCareerComponent = (function () {
     function StudyCareerComponent(el, programService, renderer) {
         this.el = el;
@@ -94,7 +95,7 @@ var StudyCareerComponent = (function () {
             selector: 'career',
             templateUrl: 'app/studycareer.component.html',
             directives: [year_component_1.YearComponent],
-            providers: [program_service_1.ProgramService]
+            providers: [program_service_1.ProgramService, prerequisites_service_1.PrerequisitesService]
         }), 
         __metadata('design:paramtypes', [core_1.ElementRef, program_service_1.ProgramService, core_1.Renderer])
     ], StudyCareerComponent);

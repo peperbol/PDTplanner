@@ -12,11 +12,29 @@ var core_1 = require('@angular/core');
 var course_1 = require('./course');
 var studycareer_component_1 = require('./studycareer.component');
 var common_1 = require('@angular/common');
+var prerequisites_service_1 = require('./prerequisites.service');
 var CourseComponent = (function () {
-    function CourseComponent() {
+    function CourseComponent(prerequisitesService) {
+        this.prerequisitesService = prerequisitesService;
         this.moveBackEvent = new core_1.EventEmitter();
         this.moveForwardEvent = new core_1.EventEmitter();
     }
+    CourseComponent.prototype.isGood = function () {
+        var _this = this;
+        return (this.prerequisitesService.prerequisites.some(function (e) { return e == _this.course.id; }) && this.prerequisitesService.year > this.year) ||
+            (this.prerequisitesService.equalrequisites.some(function (e) { return e == _this.course.id; }) && this.prerequisitesService.year >= this.year);
+    };
+    CourseComponent.prototype.isWrong = function () {
+        var _this = this;
+        return (this.prerequisitesService.prerequisites.some(function (e) { return e == _this.course.id; }) && this.prerequisitesService.year <= this.year) ||
+            (this.prerequisitesService.equalrequisites.some(function (e) { return e == _this.course.id; }) && this.prerequisitesService.year < this.year);
+    };
+    CourseComponent.prototype.mouseEnter = function () {
+        this.prerequisitesService.set(this.course.prerequisites, this.course.equalrequisites, this.year);
+    };
+    CourseComponent.prototype.mouseLeave = function () {
+        this.prerequisitesService.clear();
+    };
     CourseComponent.prototype.isFinalYear = function () {
         return this.course.prerequisites.some(function (e) { return e < 0; });
     };
@@ -58,7 +76,7 @@ var CourseComponent = (function () {
             templateUrl: 'app/course.component.html',
             directives: [common_1.NgClass]
         }), 
-        __metadata('design:paramtypes', [])
+        __metadata('design:paramtypes', [prerequisites_service_1.PrerequisitesService])
     ], CourseComponent);
     return CourseComponent;
 }());

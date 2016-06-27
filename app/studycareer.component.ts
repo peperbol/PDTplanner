@@ -3,12 +3,13 @@ import { ProgramService } from './program.service';
 import { Year }           from './year';
 import { Course }           from './course';
 import { YearComponent } from './year.component';
+import {PrerequisitesService} from './prerequisites.service';
 
 @Component({
   selector: 'career',
   templateUrl: 'app/studycareer.component.html',
   directives: [YearComponent],
-  providers: [ProgramService]
+  providers: [ProgramService,PrerequisitesService]
 })
 export class StudyCareerComponent implements OnInit{
 
