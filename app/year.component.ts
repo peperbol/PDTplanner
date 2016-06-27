@@ -23,14 +23,13 @@ export class YearComponent {
     return this.year.courses.indexOf(course);
   }
   getTotalPoints(){
-    try{
+    if (this.year.courses.length > 0)
       return Math.round(this.year.courses.map(e=>e.studypoints).reduce((t,e)=>t+e));
-    } catch(e){return 0;}
+    return 0;
   }
   getTotalPointsOfP(p :number){
-
-    try{
+    if (this.year.courses.filter(e => ((e.start)<=p)&&((e.start+e.duration)>p)).length > 0) 
       return Math.round( this.year.courses.filter(e => ((e.start)<=p)&&((e.start+e.duration)>p)).map(e=>e.studypoints/e.duration).reduce((t,e)=>t+e));
-    } catch(e){return 0;}
+    return 0;
   }
 }

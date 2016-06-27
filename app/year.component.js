@@ -26,24 +26,14 @@ var YearComponent = (function () {
         return this.year.courses.indexOf(course);
     };
     YearComponent.prototype.getTotalPoints = function () {
-        try {
+        if (this.year.courses.length > 0)
             return Math.round(this.year.courses.map(function (e) { return e.studypoints; }).reduce(function (t, e) { return t + e; }));
-        }
-        catch (e) {
-            return 0;
-        }
+        return 0;
     };
     YearComponent.prototype.getTotalPointsOfP = function (p) {
-        try {
+        if (this.year.courses.filter(function (e) { return ((e.start) <= p) && ((e.start + e.duration) > p); }).length > 0)
             return Math.round(this.year.courses.filter(function (e) { return ((e.start) <= p) && ((e.start + e.duration) > p); }).map(function (e) { return e.studypoints / e.duration; }).reduce(function (t, e) { return t + e; }));
-            try {
-            }
-            catch (e) {
-                return 0;
-            }
-        }
-        finally {
-        }
+        return 0;
     };
     __decorate([
         core_1.Input(), 
