@@ -1,6 +1,7 @@
 import { Component, Input,AfterViewChecked,OnInit, Renderer, ElementRef} from '@angular/core';
 import { ProgramService } from './program.service';
 import { Year }           from './year';
+import { Course }           from './course';
 import { YearComponent } from './year.component';
 
 @Component({
@@ -14,7 +15,7 @@ export class StudyCareerComponent implements OnInit{
   program: Year[];
   errorMessage: string;
   me = this;
-  
+
   verticalscroll = 0;
   pageheight = 0;
   windowheight = 0;
@@ -53,7 +54,10 @@ export class StudyCareerComponent implements OnInit{
     return this.program.indexOf(year);
   }
   addYear(){
-    this.program.push({'order':this.program.length+1,'courses': []});
+    let courses : Course[];
+    courses = this.program[this.program.length-1].courses.filter(e=>e.prerequisites.some(el=>el<0));
+    this.program[this.program.length-1].courses = this.program[this.program.length-1].courses.filter(e=>e.prerequisites.some(el=>el>=0))
+    this.program.push({'order':this.program.length+1,'courses': courses});
   }
   deleteYear(){
     if(this.program.length <= 1) return;

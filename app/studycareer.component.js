@@ -50,7 +50,10 @@ var StudyCareerComponent = (function () {
         return this.program.indexOf(year);
     };
     StudyCareerComponent.prototype.addYear = function () {
-        this.program.push({ 'order': this.program.length + 1, 'courses': [] });
+        var courses;
+        courses = this.program[this.program.length - 1].courses.filter(function (e) { return e.prerequisites.some(function (el) { return el < 0; }); });
+        this.program[this.program.length - 1].courses = this.program[this.program.length - 1].courses.filter(function (e) { return e.prerequisites.some(function (el) { return el >= 0; }); });
+        this.program.push({ 'order': this.program.length + 1, 'courses': courses });
     };
     StudyCareerComponent.prototype.deleteYear = function () {
         if (this.program.length <= 1)

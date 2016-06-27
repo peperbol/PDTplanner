@@ -16,6 +16,9 @@ export class CourseComponent {
   @Input() year :number;
   @Input() careerComponent: StudyCareerComponent;
 
+  isFinalYear():boolean{
+    return this.course.prerequisites.some(e=>e<0);
+  }
 
   moveBack(){this.moveBackEvent.emit(this.course)}
   moveForward(){this.moveForwardEvent.emit(this.course)}

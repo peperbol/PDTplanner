@@ -17,6 +17,9 @@ var CourseComponent = (function () {
         this.moveBackEvent = new core_1.EventEmitter();
         this.moveForwardEvent = new core_1.EventEmitter();
     }
+    CourseComponent.prototype.isFinalYear = function () {
+        return this.course.prerequisites.some(function (e) { return e < 0; });
+    };
     CourseComponent.prototype.moveBack = function () { this.moveBackEvent.emit(this.course); };
     CourseComponent.prototype.moveForward = function () { this.moveForwardEvent.emit(this.course); };
     CourseComponent.prototype.areRequisitesMet = function () {
