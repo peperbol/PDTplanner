@@ -25,12 +25,12 @@ export class YearComponent {
   getTotalPoints(){
     try{
       return Math.round(this.year.courses.map(e=>e.studypoints).reduce((t,e)=>t+e));
-    } catch(){return 0;}
+    } catch(e){return 0;}
   }
   getTotalPointsOfP(p :number){
 
     try{
       return Math.round( this.year.courses.filter(e => ((e.start)<=p)&&((e.start+e.duration)>p)).map(e=>e.studypoints/e.duration).reduce((t,e)=>t+e));
-    catch(){return 0;}
+    catch(e){return 0;}
   }
 }
