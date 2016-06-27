@@ -5,6 +5,11 @@ import {NgClass} from '@angular/common';
 import {PrerequisitesService} from './prerequisites.service';
 
 @Component({
+  
+  host:{
+      "(mouseenter)":"mouseEnter()",
+     "(mouseleave)":"mouseLeave()"
+   },
   selector: 'course',
   templateUrl: 'app/course.component.html',
   directives: [NgClass]

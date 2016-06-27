@@ -30,7 +30,6 @@ export class StudyCareerComponent implements OnInit{
   distanceFromBottom():number{
     return Math.max(0,this.pageheight - this.verticalscroll - this.windowheight);
   }
-
   constructor (private el: ElementRef, private programService:ProgramService,private renderer: Renderer){}
 
   moveCourseBack(index:number, year:Year){
@@ -56,20 +55,25 @@ export class StudyCareerComponent implements OnInit{
   }
   addYear(){
     let courses : Course[];
-    courses = this.program[this.program.length-1].courses.filter(e=>e.prerequisites.some(el=>el<0));
-    this.program[this.program.length-1].courses = this.program[this.program.length-1].courses.filter(e=>e.prerequisites.some(el=>el>=0))
+    courses = this.program[this.program.length-1].courses.filter(e=>e.graduationyear);
+    this.program[this.program.length-1].courses = this.program[this.program.length-1].courses.filter(e=>!e.graduationyear);
     this.program.push({'order':this.program.length+1,'courses': courses});
+
+    setTimeout(()=>this.updateVerticalScroll(),50);
   }
   deleteYear(){
     if(this.program.length <= 1) return;
     let lastY = this.program.pop();
     this.program[this.program.length - 1].courses = this.program[this.program.length - 1].courses.concat(lastY.courses);
+
+    setTimeout(()=>this.updateVerticalScroll(),50);
   }
   ngOnInit() {
     this.loadProgram();
       console.log('hey');
-      setTimeout(()=>this.updateVerticalScroll(),100);
+      setTimeout(()=>this.updateVerticalScroll(),50);
    }
+
   loadProgram(){
     this.programService.getProgram('mct-web')
                        .subscribe(

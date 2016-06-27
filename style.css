@@ -143,11 +143,9 @@ year>ul {
   border-top:  1px solid lightgrey
 }
 
-year>ul>li{
-  padding-top: 10px;
-}
 course{
 
+    padding: 5px 0;
   width: 96%;
   display: flex;
   margin: 0 auto;
@@ -253,5 +251,5 @@ course>div.reqgood {
 course>div.lastyear{
     border-bottom: 1px solid MediumPurple     ;
   box-sizing: border-box;
-  padding: 5px 2px 3px;
+  padding: 5px 2px 4px;
 }

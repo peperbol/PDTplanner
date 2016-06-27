@@ -51,22 +51,26 @@ var StudyCareerComponent = (function () {
         return this.program.indexOf(year);
     };
     StudyCareerComponent.prototype.addYear = function () {
+        var _this = this;
         var courses;
-        courses = this.program[this.program.length - 1].courses.filter(function (e) { return e.prerequisites.some(function (el) { return el < 0; }); });
-        this.program[this.program.length - 1].courses = this.program[this.program.length - 1].courses.filter(function (e) { return e.prerequisites.some(function (el) { return el >= 0; }); });
+        courses = this.program[this.program.length - 1].courses.filter(function (e) { return e.graduationyear; });
+        this.program[this.program.length - 1].courses = this.program[this.program.length - 1].courses.filter(function (e) { return !e.graduationyear; });
         this.program.push({ 'order': this.program.length + 1, 'courses': courses });
+        setTimeout(function () { return _this.updateVerticalScroll(); }, 50);
     };
     StudyCareerComponent.prototype.deleteYear = function () {
+        var _this = this;
         if (this.program.length <= 1)
             return;
         var lastY = this.program.pop();
         this.program[this.program.length - 1].courses = this.program[this.program.length - 1].courses.concat(lastY.courses);
+        setTimeout(function () { return _this.updateVerticalScroll(); }, 50);
     };
     StudyCareerComponent.prototype.ngOnInit = function () {
         var _this = this;
         this.loadProgram();
         console.log('hey');
-        setTimeout(function () { return _this.updateVerticalScroll(); }, 100);
+        setTimeout(function () { return _this.updateVerticalScroll(); }, 50);
     };
     StudyCareerComponent.prototype.loadProgram = function () {
         var _this = this;

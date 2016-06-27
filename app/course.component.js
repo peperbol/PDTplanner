@@ -72,6 +72,10 @@ var CourseComponent = (function () {
     ], CourseComponent.prototype, "careerComponent", void 0);
     CourseComponent = __decorate([
         core_1.Component({
+            host: {
+                "(mouseenter)": "mouseEnter()",
+                "(mouseleave)": "mouseLeave()"
+            },
             selector: 'course',
             templateUrl: 'app/course.component.html',
             directives: [common_1.NgClass]
