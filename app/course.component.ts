@@ -12,6 +12,10 @@ export class CourseComponent {
   @Input() course: Course;
   @Output() moveBackEvent = new EventEmitter();
   @Output() moveForwardEvent = new EventEmitter();
-  public moveBack(){this.moveBackEvent.emit(this.course)}
-  public moveForward(){this.moveForwardEvent.emit(this.course)}
+
+  moveBack(){this.moveBackEvent.emit(this.course)}
+  moveForward(){this.moveForwardEvent.emit(this.course)}
+  RequisitesAreValid(): Bool{
+    
+  }
 }

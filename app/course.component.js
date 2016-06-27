@@ -18,6 +18,8 @@ var CourseComponent = (function () {
     }
     CourseComponent.prototype.moveBack = function () { this.moveBackEvent.emit(this.course); };
     CourseComponent.prototype.moveForward = function () { this.moveForwardEvent.emit(this.course); };
+    CourseComponent.prototype.RequisitesAreValid = function () {
+    };
     __decorate([
         core_1.Input(), 
         __metadata('design:type', course_1.Course)

@@ -151,9 +151,9 @@ course a {
   margin: 0 15px;
   display: block;
   height: 1.5em;
-  line-height: 1.5em;
+  line-height: 1.6em;
   text-overflow: ellipsis;
-  font-size: 0.85em;
+  font-size: 0.86em;
   overflow: hidden;
 	white-space: nowrap;
 }
