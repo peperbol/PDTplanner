@@ -123,10 +123,10 @@ course>*{
 }
 course>div{
   background-color: lavender;
-  padding: 5px;
+  padding: 5px 0;
   box-sizing: border-box;
   text-align: center;
-  border-radius: 10px;
+  border-radius: 6px;
   position: relative;
   color: MediumPurple ;
   display: inline-block;
@@ -138,6 +138,7 @@ course>div:hover {
   background-color:  MediumPurple;
   color: lavender ;
   width: auto !important;
+  padding: 5px;
 }
 course:hover>div a,
 course>div:hover a{
@@ -152,8 +153,8 @@ course a {
   height: 1.5em;
   line-height: 1.5em;
   text-overflow: ellipsis;
-
-  	overflow: hidden;
+  font-size: 0.85em;
+  overflow: hidden;
 	white-space: nowrap;
 }
 course>div:hover a:hover {
