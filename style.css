@@ -126,8 +126,15 @@ course>div:hover {
   color: lavender ;
   width: auto !important;
 }
-course span {
-  padding: 0 15px;
+course:hover>div a,
+course>div:hover a{
+  color: lavender ;
+  text-decoration: underline;
+}
+course a {
+  color: MediumPurple ;
+  text-decoration: none;
+  margin: 0 15px;
   display: block;
   height: 1.5em;
   line-height: 1.5em;

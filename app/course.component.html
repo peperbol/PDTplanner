@@ -1,7 +1,7 @@
 <i [ngStyle]="{'flex-grow':(course.start-1)}"></i>
 <div [ngStyle]="{'flex-grow':(course.duration)}">
   <button class="fa fa-chevron-left" (click)="moveBack()"></button>
-  <span>{{course.name}}</span>
+  <a [href]="course.url" target="_blank">{{course.name}}</a>
 
   <button class="fa fa-chevron-right" (click)="moveForward()"></button>
 </div>
