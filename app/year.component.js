@@ -29,7 +29,7 @@ var YearComponent = (function () {
         try {
             return Math.round(this.year.courses.map(function (e) { return e.studypoints; }).reduce(function (t, e) { return t + e; }));
         }
-        catch () {
+        catch (e) {
             return 0;
         }
     };
@@ -38,7 +38,7 @@ var YearComponent = (function () {
             return Math.round(this.year.courses.filter(function (e) { return ((e.start) <= p) && ((e.start + e.duration) > p); }).map(function (e) { return e.studypoints / e.duration; }).reduce(function (t, e) { return t + e; }));
             try {
             }
-            catch () {
+            catch (e) {
                 return 0;
             }
         }
