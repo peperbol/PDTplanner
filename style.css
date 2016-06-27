@@ -232,10 +232,15 @@ course>div.invalid{
   background-color: LightPink   ;
 }
 
-course>div.invalid *{
+course>div.invalid *,
+course:hover>div.invalid *{
   color: FireBrick  ;
 }
-
 course>div.invalid a:hover{
   color: black  ;
+}
+course>div.lastyear{
+    border-bottom: 1px solid MediumPurple     ;
+  box-sizing: border-box;
+  padding: 5px 0 3px;
 }
