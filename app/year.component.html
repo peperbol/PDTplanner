@@ -4,7 +4,8 @@
 </div>
 <ul>
   <li *ngFor="let courseEl of year.courses">
-    <course [course]="courseEl" (moveBackEvent)="moveCourseBack($event)" (moveForwardEvent)="moveCourseForward($event)"></course>
+    <course [course]="courseEl" [year]="year.order" [careerComponent]="careerComponent"
+     (moveBackEvent)="moveCourseBack($event)" (moveForwardEvent)="moveCourseForward($event)"></course>
   </li>
 </ul>
 <div>

@@ -10,6 +10,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var course_1 = require('./course');
+var studycareer_component_1 = require('./studycareer.component');
 var common_1 = require('@angular/common');
 var CourseComponent = (function () {
     function CourseComponent() {
@@ -18,7 +19,15 @@ var CourseComponent = (function () {
     }
     CourseComponent.prototype.moveBack = function () { this.moveBackEvent.emit(this.course); };
     CourseComponent.prototype.moveForward = function () { this.moveForwardEvent.emit(this.course); };
-    CourseComponent.prototype.RequisitesAreValid = function () {
+    CourseComponent.prototype.areRequisitesMet = function () {
+        var good = true;
+        for (var i = 0; i < this.course.prerequisites.length; i++) {
+            good = good && this.year > this.careerComponent.getYearOf(this.course.prerequisites[i]);
+        }
+        for (var i = 0; i < this.course.equalrequisites.length; i++) {
+            good = good && this.year >= this.careerComponent.getYearOf(this.course.equalrequisites[i]);
+        }
+        return good;
     };
     __decorate([
         core_1.Input(), 
@@ -32,6 +41,14 @@ var CourseComponent = (function () {
         core_1.Output(), 
         __metadata('design:type', Object)
     ], CourseComponent.prototype, "moveForwardEvent", void 0);
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', Number)
+    ], CourseComponent.prototype, "year", void 0);
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', studycareer_component_1.StudyCareerComponent)
+    ], CourseComponent.prototype, "careerComponent", void 0);
     CourseComponent = __decorate([
         core_1.Component({
             selector: 'course',

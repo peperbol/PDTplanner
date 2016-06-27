@@ -1,5 +1,5 @@
-<i [ngStyle]="{'flex-grow':(course.start-1)}"></i>
-<div [ngStyle]="{'flex-grow':(course.duration)}">
+<i [ngStyle]="{'flex-grow':(course.start-1)}" ></i>
+<div [ngStyle]="{'flex-grow':(course.duration)}" [class.invalid]="!areRequisitesMet()">
   <button class="fa fa-chevron-left" (click)="moveBack()"></button>
   <a [href]="course.url" target="_blank">{{course.name}}</a>
 

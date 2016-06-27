@@ -11,6 +11,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var year_1 = require('./year');
 var course_component_1 = require('./course.component');
+var studycareer_component_1 = require('./studycareer.component');
 var YearComponent = (function () {
     function YearComponent() {
         this.moveBackEvent = new core_1.EventEmitter();
@@ -47,6 +48,10 @@ var YearComponent = (function () {
         core_1.Output(), 
         __metadata('design:type', Object)
     ], YearComponent.prototype, "moveForwardEvent", void 0);
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', studycareer_component_1.StudyCareerComponent)
+    ], YearComponent.prototype, "careerComponent", void 0);
     YearComponent = __decorate([
         core_1.Component({
             selector: 'year',

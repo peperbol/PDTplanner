@@ -1,6 +1,9 @@
 body{
   font-family: helvetica, arial, sans-serif
 }
+:focus {
+outline: none;
+}
 career, myapp {
   display: block;
 }
@@ -29,10 +32,23 @@ career>ul{
 .tools>button.fa {
   color: MediumPurple;
     display: block;
+    text-align: center;
+    outline: none;
 }
 .tools>button.fa.disabled {
   color: lavender;
   cursor: default;
+}
+
+.tools>button.fa.fa-check:not(.fa-check-square) {
+  font-size: 0.8em;
+  margin-top: 2px;
+}
+.tools>button.fa.fa-check {
+  color: LightCoral;
+}
+.tools>button.fa.fa-check.valid {
+  color: PaleGreen;
 }
 
 career ul{
@@ -193,4 +209,17 @@ career>ul>li:last-child course button.fa~button{
 }
 button{
   cursor: pointer;
+}
+.validate .invalid{
+  background-color: LightCoral  ;
+}
+
+.validate course>div.invalid a{
+  color: FireBrick  ;
+}
+.validate course>div:not(.invalid){
+  background-color: PaleGreen;
+}
+.validate course>div:not(.invalid) a{
+  color: SeaGreen ;
 }

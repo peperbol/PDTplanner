@@ -14,6 +14,7 @@ var year_component_1 = require('./year.component');
 var StudyCareerComponent = (function () {
     function StudyCareerComponent(programService) {
         this.programService = programService;
+        this.me = this;
     }
     StudyCareerComponent.prototype.moveCourseBack = function (index, year) {
         this.moveCourse(year, this.program[this.getYearIndex(year) - 1], index);
@@ -48,6 +49,23 @@ var StudyCareerComponent = (function () {
         var _this = this;
         this.programService.getProgram('mct-web')
             .subscribe(function (result) { return _this.program = result; }, function (error) { return _this.errorMessage = error; });
+    };
+    StudyCareerComponent.prototype.isValid = function () {
+        var elements = document.querySelector("course .invalid");
+        if (!elements)
+            return true;
+        return elements.length <= 0;
+    };
+    StudyCareerComponent.prototype.getYearOf = function (courseId) {
+        var result = -1;
+        var i = 0;
+        while (result < 0 && i < this.program.length) {
+            if (this.program[i].courses.some(function (e) { return e.id == courseId; })) {
+                result = this.program[i].order;
+            }
+            i++;
+        }
+        return result;
     };
     StudyCareerComponent = __decorate([
         core_1.Component({

@@ -12,6 +12,9 @@ export class StudyCareerComponent implements OnInit{
 
   program: Year[];
   errorMessage: string;
+  me = this;
+  validating :boolean;
+  validatinglock :boolean;
 
   constructor (private programService:ProgramService){}
 
@@ -52,5 +55,21 @@ export class StudyCareerComponent implements OnInit{
                           result => this.program = result,
                           error =>  this.errorMessage = <any>error
                        );
+  }
+  isValid():boolean{
+    let elements =  document.querySelector("course .invalid");
+    if(!elements) return true;
+    return  elements.length <= 0;
+  }
+  getYearOf(courseId:number): number{
+    let result = -1;
+    let i = 0;
+    while (result < 0 && i< this.program.length){
+      if(this.program[i].courses.some(e=>e.id == courseId)){
+        result = this.program[i].order;
+      }
+      i++;
+    }
+    return result;
   }
 }

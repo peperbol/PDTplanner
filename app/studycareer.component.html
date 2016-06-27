@@ -1,11 +1,14 @@
 
 
-<ul class="program">
+<ul class="program" [class.validate]="validating ||validatinglock">
   <li *ngFor="let yearElement of program">
-    <year [year]="yearElement" (moveBackEvent)="moveCourseBack($event.index, $event.year)" (moveForwardEvent)="moveCourseForward($event.index, $event.year)"></year>
+    <year [year]="yearElement" [careerComponent]="me" (moveBackEvent)="moveCourseBack($event.index, $event.year)" (moveForwardEvent)="moveCourseForward($event.index, $event.year)"></year>
   </li>
 </ul>
 <div class="tools">
   <button class="fa fa-plus-square-o" (click)="addYear()"></button>
   <button class="fa fa-trash-o" (click)="deleteYear()" [class.disabled]="program&&program.length<=1"></button>
+  <button class="fa fa-check" [class.fa-check-square]="validatinglock" [class.valid]="isValid()" 
+  (mouseenter)="validating=true" (mouseleave)="validating=false" (click)="validatinglock = !validatinglock"></button>
+
 </div>

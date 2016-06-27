@@ -3,6 +3,7 @@ export class Course {
     public id : number,
     public name : string,
     public prerequisites : number[],
+    public equalrequisites : number[],
     public start : number,
     public duration : number,
     public studypoints : number,
