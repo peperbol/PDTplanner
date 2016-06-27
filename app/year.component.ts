@@ -22,5 +22,12 @@ export class YearComponent {
   getCourseIndex(course:Course){
     return this.year.courses.indexOf(course);
   }
-  
+  getTotalPoints(){
+    return Math.round(this.year.courses.map(e=>e.studypoints).reduce((t,e)=>t+e));
+  }
+  getTotalPointsOfP(p :number){
+
+    return Math.round( this.year.courses.filter(e => ((e.start)<=p)&&((e.start+e.duration)>p)).map(e=>e.studypoints/e.duration).reduce((t,e)=>t+e));
+
+  }
 }

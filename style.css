@@ -69,16 +69,29 @@ year>h2{
   text-align: center;
   font-weight: normal;
 }
-year>h2,
-year>.foursplit{
-  background-color: white;
+year::after{
+  content: '';
+  display:block;
+  height: 80px;
 }
-year>.foursplit::after {
+year>div:last-child {
+  margin-top: 15px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+year>div:last-child>div:last-child {
+  font-size: 2em;
+  margin-top: 5px;
+}
+year>div>.foursplit::after {
   content: '';
   display: table;
   clear: both;
 }
-year>.foursplit>*{
+year>div>.foursplit>*{
   width: 25%;
   box-sizing: border-box;
   border-right: 2px dashed lightgrey;
@@ -87,7 +100,7 @@ year>.foursplit>*{
   line-height: 200%;
   height: 2em;
 }
-year>.foursplit>*:last-child{
+year>div>.foursplit>*:last-child{
   border-right: none;
 }
 
@@ -142,6 +155,9 @@ course a {
 
   	overflow: hidden;
 	white-space: nowrap;
+}
+course>div:hover a:hover {
+  color: white ;
 }
 button.fa {
   background: none;

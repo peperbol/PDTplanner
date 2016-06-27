@@ -1,7 +1,13 @@
-<h2>Jaar {{year.order}}</h2>
-<div class="foursplit"><div *ngFor="let number of [1,2,3,4]">{{number}}</div></div>
+<div>
+  <h2>Jaar {{year.order}}</h2>
+  <div class="foursplit"><div *ngFor="let number of [1,2,3,4]">{{number}}</div></div>
+</div>
 <ul>
   <li *ngFor="let courseEl of year.courses">
     <course [course]="courseEl" (moveBackEvent)="moveCourseBack($event)" (moveForwardEvent)="moveCourseForward($event)"></course>
   </li>
 </ul>
+<div>
+  <div class="foursplit"><div *ngFor="let number of [1,2,3,4]" [textContent]="getTotalPointsOfP(number)"></div></div>
+  <div [textContent]="getTotalPoints()" > <i class="fa fa-graduation-cap" aria-hidden="true"></i></div>
+</div>
