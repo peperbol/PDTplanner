@@ -8,7 +8,7 @@
      (moveBackEvent)="moveCourseBack($event)" (moveForwardEvent)="moveCourseForward($event)"></course>
   </li>
 </ul>
-<div>
+<div [style.bottom.px]="distanceFromBottom">
   <div class="foursplit"><div *ngFor="let number of [1,2,3,4]" [textContent]="getTotalPointsOfP(number)">0</div></div>
   <div [textContent]="getTotalPoints()" >0</div>
 </div>

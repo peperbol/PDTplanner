@@ -9,12 +9,13 @@ import { StudyCareerComponent } from './studycareer.component';
   directives: [CourseComponent],
 })
 export class YearComponent {
-  
+
   @Input() year: Year;
 
   @Output() moveBackEvent = new EventEmitter();
   @Output() moveForwardEvent = new EventEmitter();
   @Input() careerComponent: StudyCareerComponent ;
+  @Input() distanceFromBottom: number ;
 
   moveCourseBack(course:Course){
     this.moveBackEvent.emit({'year':this.year,'index':this.getCourseIndex(course) })

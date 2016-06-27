@@ -12,10 +12,24 @@ var core_1 = require('@angular/core');
 var program_service_1 = require('./program.service');
 var year_component_1 = require('./year.component');
 var StudyCareerComponent = (function () {
-    function StudyCareerComponent(programService) {
+    function StudyCareerComponent(el, programService, renderer) {
+        this.el = el;
         this.programService = programService;
+        this.renderer = renderer;
         this.me = this;
+        this.verticalscroll = 0;
+        this.pageheight = 0;
+        this.windowheight = 0;
     }
+    StudyCareerComponent.prototype.updateVerticalScroll = function () {
+        this.verticalscroll = document.body.scrollTop;
+        this.pageheight = document.body.offsetHeight;
+        this.windowheight = window.innerHeight;
+        console.log(document.body.offsetHeight);
+    };
+    StudyCareerComponent.prototype.distanceFromBottom = function () {
+        return Math.max(0, this.pageheight - this.verticalscroll - this.windowheight);
+    };
     StudyCareerComponent.prototype.moveCourseBack = function (index, year) {
         this.moveCourse(year, this.program[this.getYearIndex(year) - 1], index);
     };
@@ -44,14 +58,19 @@ var StudyCareerComponent = (function () {
         var lastY = this.program.pop();
         this.program[this.program.length - 1].courses = this.program[this.program.length - 1].courses.concat(lastY.courses);
     };
-    StudyCareerComponent.prototype.ngOnInit = function () { this.loadProgram(); };
+    StudyCareerComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.loadProgram();
+        console.log('hey');
+        setTimeout(function () { return _this.updateVerticalScroll(); }, 100);
+    };
     StudyCareerComponent.prototype.loadProgram = function () {
         var _this = this;
         this.programService.getProgram('mct-web')
             .subscribe(function (result) { return _this.program = result; }, function (error) { return _this.errorMessage = error; });
     };
     StudyCareerComponent.prototype.isValid = function () {
-        var elements = document.querySelector("course .invalid");
+        var elements = this.el.nativeElement.querySelector("course .invalid");
         if (!elements)
             return true;
         return elements.length <= 0;
@@ -74,7 +93,7 @@ var StudyCareerComponent = (function () {
             directives: [year_component_1.YearComponent],
             providers: [program_service_1.ProgramService]
         }), 
-        __metadata('design:paramtypes', [program_service_1.ProgramService])
+        __metadata('design:paramtypes', [core_1.ElementRef, program_service_1.ProgramService, core_1.Renderer])
     ], StudyCareerComponent);
     return StudyCareerComponent;
 }());

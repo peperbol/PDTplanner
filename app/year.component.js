@@ -52,6 +52,10 @@ var YearComponent = (function () {
         core_1.Input(), 
         __metadata('design:type', studycareer_component_1.StudyCareerComponent)
     ], YearComponent.prototype, "careerComponent", void 0);
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', Number)
+    ], YearComponent.prototype, "distanceFromBottom", void 0);
     YearComponent = __decorate([
         core_1.Component({
             selector: 'year',

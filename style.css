@@ -4,7 +4,7 @@ body{
 :focus {
 outline: none;
 }
-career, myapp {
+career, year {
   display: block;
 }
 career{
@@ -27,6 +27,8 @@ career>ul{
   display: inline-block;
   font-size: 30px;
   width: 35px;
+  position: absolute;
+  transition: top 0.1s;
 }
 
 .tools>button.fa {
@@ -45,7 +47,7 @@ career>ul{
   margin-top: 2px;
 }
 .tools>button.fa.fa-check {
-  color: LightCoral;
+  color: Tomato ;
 }
 .tools>button.fa.fa-check.valid {
   color: PaleGreen;
@@ -57,7 +59,6 @@ career ul{
 }
 career>ul>li{
   flex-grow: 1;
-    flex-s: 1;
   position: relative;
   min-width: 300px;
 }
@@ -74,6 +75,7 @@ career>ul>li:first-child::before{
   background-position: right;
   background-size: 1px 20px;
   background-repeat: repeat-y;
+  z-index: 6;
 }
 career>ul>li:first-child::before{
   left: 0;
@@ -85,18 +87,34 @@ year>h2{
   text-align: center;
   font-weight: normal;
 }
-year::after{
+
+body::after{
   content: '';
   display:block;
   height: 80px;
+  position: fixed;
+  background: white;
+  bottom: 0;
+  width: 100%;
+}
+year::after{
+  content: '';
+  display:block;
+  height: 100px;
 }
 year>div:last-child {
   margin-top: 15px;
-  position: absolute;
-  bottom: 0;
+  transition: bottom 0.05s;
   left: 0;
   right: 0;
+  position: absolute;
+  padding-bottom: 20px;
+  z-index: 5;
+  background: white;
+  border-top:  1px solid lightgrey;
+
 }
+
 
 year>div:last-child>div:last-child {
   font-size: 2em;
@@ -146,7 +164,6 @@ course>div{
   position: relative;
   color: MediumPurple ;
   display: inline-block;
-  z-index:5;
 
 }
 course:hover>div,
@@ -211,15 +228,13 @@ button{
   cursor: pointer;
 }
 .validate .invalid{
-  background-color: LightCoral  ;
+  background-color: LightPink   ;
 }
 
-.validate course>div.invalid a{
+.validate course>div.invalid *{
   color: FireBrick  ;
 }
-.validate course>div:not(.invalid){
-  background-color: PaleGreen;
-}
-.validate course>div:not(.invalid) a{
-  color: SeaGreen ;
+
+.validate course>div.invalid a:hover{
+  color: black  ;
 }

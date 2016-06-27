@@ -1,7 +1,8 @@
-import { Component, Input,OnInit } from '@angular/core';
+import { Component, Input,AfterViewChecked,OnInit, Renderer, ElementRef} from '@angular/core';
 import { ProgramService } from './program.service';
 import { Year }           from './year';
 import { YearComponent } from './year.component';
+
 @Component({
   selector: 'career',
   templateUrl: 'app/studycareer.component.html',
@@ -15,8 +16,21 @@ export class StudyCareerComponent implements OnInit{
   me = this;
   validating :boolean;
   validatinglock :boolean;
+  verticalscroll = 0;
+  pageheight = 0;
+  windowheight = 0;
 
-  constructor (private programService:ProgramService){}
+  updateVerticalScroll(){
+    this.verticalscroll = document.body.scrollTop;
+    this.pageheight = document.body.offsetHeight;
+    this.windowheight = window.innerHeight;
+    console.log(document.body.offsetHeight);
+  }
+  distanceFromBottom():number{
+    return Math.max(0,this.pageheight - this.verticalscroll - this.windowheight);
+  }
+
+  constructor (private el: ElementRef, private programService:ProgramService,private renderer: Renderer){}
 
   moveCourseBack(index:number, year:Year){
     this.moveCourse(year,this.program[this.getYearIndex(year)-1],index)
@@ -47,8 +61,11 @@ export class StudyCareerComponent implements OnInit{
     let lastY = this.program.pop();
     this.program[this.program.length - 1].courses = this.program[this.program.length - 1].courses.concat(lastY.courses);
   }
-  ngOnInit() { this.loadProgram(); }
-
+  ngOnInit() {
+    this.loadProgram();
+      console.log('hey');
+      setTimeout(()=>this.updateVerticalScroll(),100);
+   }
   loadProgram(){
     this.programService.getProgram('mct-web')
                        .subscribe(
@@ -57,7 +74,7 @@ export class StudyCareerComponent implements OnInit{
                        );
   }
   isValid():boolean{
-    let elements =  document.querySelector("course .invalid");
+    let elements : any[] = this.el.nativeElement.querySelector("course .invalid");
     if(!elements) return true;
     return  elements.length <= 0;
   }
