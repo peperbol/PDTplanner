@@ -10,5 +10,5 @@
 </ul>
 <div [style.bottom.px]="distanceFromBottom">
   <div class="foursplit"><div *ngFor="let number of [1,2,3,4]" [textContent]="getTotalPointsOfP(number)">0</div></div>
-  <div [textContent]="getTotalPoints()" >0</div>
+  <div [textContent]="getTotalPoints()" [class.exceedmaxsp]="getTotalPoints()>72" >0</div>
 </div>

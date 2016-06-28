@@ -38,6 +38,7 @@ var StudyCareerComponent = (function () {
         this.moveCourse(year, this.program[this.getYearIndex(year) + 1], index);
     };
     StudyCareerComponent.prototype.moveCourse = function (fromY, toY, index) {
+        var _this = this;
         var course = fromY.courses[index];
         fromY.courses.splice(index, 1);
         if (toY.courses.length > index) {
@@ -46,6 +47,7 @@ var StudyCareerComponent = (function () {
         else {
             toY.courses.push(course);
         }
+        setTimeout(function () { return _this.updateVerticalScroll(); }, 50);
     };
     StudyCareerComponent.prototype.getYearIndex = function (year) {
         return this.program.indexOf(year);

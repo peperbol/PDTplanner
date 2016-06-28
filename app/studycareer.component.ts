@@ -49,6 +49,8 @@ export class StudyCareerComponent implements OnInit{
       }else{
         toY.courses.push(course);
       }
+
+      setTimeout(()=>this.updateVerticalScroll(),50);
   }
   getYearIndex(year:Year) : number{
     return this.program.indexOf(year);

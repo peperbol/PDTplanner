@@ -5,6 +5,6 @@
   <a [href]="course.url" target="_blank" >{{course.name}}</a>
 
   <button class="fa fa-chevron-right" (click)="moveForward()" *ngIf="!course.graduationyear"> </button>
-  <div>{{course.studypoints}} SP</div>
+  <div class="studypoints">{{course.studypoints}} <sup>SP</sup></div>
 </div>
 <i [ngStyle]="{'flex-grow':5-course.start-course.duration}"></i>

@@ -145,8 +145,8 @@ year>ul {
 
 course{
 
-    padding: 5px 0;
-  width: 96%;
+    padding: 7px 0;
+  width: 95%;
   display: flex;
   margin: 0 auto;
 }
@@ -191,6 +191,27 @@ course a {
 }
 course>div:hover a:hover {
   color: white ;
+}
+course .studypoints {
+  position: absolute;
+  width: 30px;
+  height: 14px;
+  line-height: 14px;
+  font-size: 10px;
+  border-radius: 5px;
+  background: LightSlateGrey ;
+  bottom: -10px;
+  right: -4px;;
+  color: white;
+  font-weight: bold;
+}
+
+course:hover .studypoints{
+ background: MidnightBlue  ;
+}
+course .studypoints sup {
+  font-size: 0.8em;
+  vertical-align: top;
 }
 button.fa {
   background: none;
@@ -238,6 +259,19 @@ course>div.invalid a:hover{
   color: black  ;
 }
 
+course>div.invalid .studypoints,
+course>div.invalid .studypoints *{
+  color: white;
+}
+course:hover>div.invalid .studypoints{
+  background-color: Maroon ;
+}
+
+course>div.reqwrong .studypoints,
+course>div.reqgood .studypoints{
+  bottom: -12px;
+  right: -6px;;
+}
 course>div.reqwrong {
   border: 2px solid Coral ;
 
@@ -252,4 +286,14 @@ course>div.lastyear{
     border-bottom: 1px solid MediumPurple     ;
   box-sizing: border-box;
   padding: 5px 2px 4px;
+}
+.exceedmaxsp {
+  color:FireBrick;
+}
+.exceedmaxsp::after {
+  content: " (max 72)";
+  font-size: 0.5em;
+  display: inline;
+  position: absolute;
+  transform: translate(5px,12px);
 }
