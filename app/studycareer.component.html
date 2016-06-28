@@ -9,5 +9,8 @@
   <button class="fa fa-plus-square-o"  (click)="addYear()"></button>
   <button class="fa fa-trash-o" (click)="deleteYear()" [class.disabled]="program&&program.length<=1"></button>
   <button class="fa fa-check"  [class.valid]="isValid()"></button>
-
+  <div class="credits">
+    <p>Gemaakt door <strong>Pepijn Willekens</strong></p>
+    <a href="http://www.pepijnwillekens.com" target="_blank">www.pepijnwillekens.com</a>
+  </div>
 </div>

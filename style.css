@@ -305,3 +305,21 @@ course>div.lastyear{
   position: absolute;
   transform: translate(5px,12px);
 }
+.credits {
+  font-family: Arial;
+  margin-top: 60px;
+  font-size: 10px;
+  transform: rotate(90deg);
+  letter-spacing: 0.3em;
+  font-weight: bolder;
+}
+.credits *{
+  margin:0;
+  color: LightSlateGray  ;
+}
+.credits a{
+  text-decoration: none;
+}
+.credits a:hover{
+  border-bottom: 2px dotted LightSlateGray;
+}
