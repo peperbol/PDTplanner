@@ -171,11 +171,15 @@ course>div:hover {
   color: lavender ;
   width: auto !important;
   padding: 5px;
+  vertical-align: center;
 }
 course:hover>div a,
 course>div:hover a{
   color: lavender ;
   text-decoration: underline;
+
+  margin: 0  0 0 15px;
+  display: inline;
 }
 course a {
   color: MediumPurple ;
@@ -193,25 +197,24 @@ course>div:hover a:hover {
   color: white ;
 }
 course .studypoints {
-  position: absolute;
+  display: none;
   width: 30px;
-  height: 14px;
-  line-height: 14px;
-  font-size: 10px;
+  height: 1.2em;
+  font-size: 0.8em;
   border-radius: 5px;
-  background: LightSlateGrey ;
-  bottom: -10px;
-  right: -4px;;
-  color: white;
+ background: lavender  ;
+   margin: 0 20px 0 5px;
+  color: MediumPurple;
+  padding: 5px 4px 3px;
   font-weight: bold;
 }
 
 course:hover .studypoints{
- background: MidnightBlue  ;
+  display: inline;
 }
 course .studypoints sup {
   font-size: 0.8em;
-  vertical-align: top;
+  vertical-align: baseline;
 }
 button.fa {
   background: none;
@@ -261,17 +264,12 @@ course>div.invalid a:hover{
 
 course>div.invalid .studypoints,
 course>div.invalid .studypoints *{
-  color: white;
+  color: LightPink;
 }
 course:hover>div.invalid .studypoints{
-  background-color: Maroon ;
+  background-color: FireBrick ;
 }
 
-course>div.reqwrong .studypoints,
-course>div.reqgood .studypoints{
-  bottom: -12px;
-  right: -6px;;
-}
 course>div.reqwrong {
   border: 2px solid Coral ;
 
