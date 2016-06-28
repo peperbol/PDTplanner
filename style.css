@@ -253,6 +253,9 @@ career>ul>li:first-child course button.fa:first-child{
 career>ul>li:last-child course button.fa~button{
   display: none !important;
 }
+career>ul>li:last-child course .studypoints {
+  margin-right: 5px;
+}
 button{
   cursor: pointer;
 }
