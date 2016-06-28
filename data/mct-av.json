@@ -352,114 +352,125 @@
         "url": "https://bamaflexweb.kdg.be/BMFUIDetailxOLOD.aspx?a=63368&b=1&c=1"
       },
       {
-        "id":32,
-        "name":"Databanken 2",
-        "prerequisites":[],
+        "id":53,
+        "name":"3D-Modeling 2",
+        "prerequisites":[21,1],
         "equalrequisites":[],
         "graduationyear":false,
-        "start":3,
+        "start":4,
         "duration":1,
         "studypoints":3,
-        "url": "https://bamaflexweb.kdg.be/BMFUIDetailxOLOD.aspx?a=63403&b=1&c=1"
+        "url": "https://bamaflexweb.kdg.be/BMFUIDetailxOLOD.aspx?a=63357&b=1&c=1"
       },
       {
-        "id":33,
-        "name":"Mobile Software 2",
-        "prerequisites":[4,1,10,11,16,17,18,19,20],
-        "equalrequisites":[34],
-        "graduationyear":false,
-        "start":2,
-        "duration":2,
-        "studypoints":3,
-        "url": "https://bamaflexweb.kdg.be/BMFUIDetailxOLOD.aspx?a=66068&b=1&c=1"
-      },
-      {
-        "id":34,
-        "name":"Concepting 2",
-        "prerequisites":[4,1,10,11,16,17,18,19,20],
-        "equalrequisites":[33],
-        "graduationyear":false,
-        "start":2,
-        "duration":2,
-        "studypoints":3,
-        "url": "https://bamaflexweb.kdg.be/BMFUIDetailxOLOD.aspx?a=66069&b=1&c=1"
-      },
-      {
-        "id":35,
-        "name":"Programmeren Web-UX 2",
-        "prerequisites":[16],
+        "id":54,
+        "name":"Filmtaal 2",
+        "prerequisites":[7,8],
         "equalrequisites":[],
         "graduationyear":false,
         "start":1,
         "duration":2,
-        "studypoints":5,
-        "url": "https://bamaflexweb.kdg.be/BMFUIDetailxOLOD.aspx?a=63401&b=1&c=1"
+        "studypoints":3,
+        "url": "https://bamaflexweb.kdg.be/BMFUIDetailxOLOD.aspx?a=63408&b=1&c=1"
       },
       {
-        "id":36,
-        "name":"Projectmanagement Web-UX 2",
-        "prerequisites":[16,20,19,18,17,1,4,10,11],
-        "equalrequisites":[23,24,25,37,38],
+        "id":68,
+        "name":"Audioproductie 2",
+        "prerequisites":[5,6],
+        "equalrequisites":[],
         "graduationyear":false,
-        "start":2,
+        "start":1,
         "duration":1,
-        "studypoints":1,
-        "url": "https://bamaflexweb.kdg.be/BMFUIDetailxOLOD.aspx?a=63398&b=1&c=1"
+        "studypoints":3,
+        "url": "https://bamaflexweb.kdg.be/BMFUIDetailxOLOD.aspx?a=63351&b=1&c=1"
       },
       {
-        "id":37,
-        "name":"Projectontwikkeling Web-UX 2",
-        "prerequisites":[16,20,19,18,17,1,4,10,11],
-        "equalrequisites":[23,24,25,36,38],
+        "id":69,
+        "name":"Editing 2",
+        "prerequisites":[7,8],
+        "equalrequisites":[],
+        "graduationyear":false,
+        "start":4,
+        "duration":1,
+        "studypoints":4,
+        "url": "https://bamaflexweb.kdg.be/BMFUIDetailxOLOD.aspx?a=63352&b=1&c=1"
+      },
+      {
+        "id":70,
+        "name":"Multicam 2",
+        "prerequisites":[5,6,7,8,12,13],
+        "equalrequisites":[71],
         "graduationyear":false,
         "start":3,
-        "duration":2,
-        "studypoints":5,
-        "url": "https://bamaflexweb.kdg.be/BMFUIDetailxOLOD.aspx?a=63397&b=1&c=1"
+        "duration":1,
+        "studypoints":6,
+        "url": "https://bamaflexweb.kdg.be/BMFUIDetailxOLOD.aspx?a=66066&b=1&c=1"
       },
       {
-        "id":38,
-        "name":"Workshop Web-UX 2",
-        "prerequisites":[16,20,19,18,17,1,4,10,11],
-        "equalrequisites":[23,24,25,37,36],
+        "id":71,
+        "name":"Dagstages AV 2",
+        "prerequisites":[5,6,7,8,12,13],
+        "equalrequisites":[70],
         "graduationyear":false,
         "start":1,
         "duration":4,
-        "studypoints":1,
-        "url": "https://bamaflexweb.kdg.be/BMFUIDetailxOLOD.aspx?a=63396&b=1&c=1"
+        "studypoints":2,
+        "url": "https://bamaflexweb.kdg.be/BMFUIDetailxOLOD.aspx?a=63356&b=1&c=1"
       },
       {
-        "id":39,
-        "name":"Software Engineering Web-UX 2",
+        "id":72,
+        "name":"Audiotechniek 2",
+        "prerequisites":[5,6,2,3],
+        "equalrequisites":[73,74],
+        "graduationyear":false,
+        "start":1,
+        "duration":2,
+        "studypoints":4,
+        "url": "https://bamaflexweb.kdg.be/BMFUIDetailxOLOD.aspx?a=63348&b=1&c=1"
+      },
+      {
+        "id":73,
+        "name":"Belichtingstechniek 2",
+        "prerequisites":[5,6,2,3],
+        "equalrequisites":[72,74],
+        "graduationyear":false,
+        "start":1,
+        "duration":1,
+        "studypoints":2,
+        "url": "https://bamaflexweb.kdg.be/BMFUIDetailxOLOD.aspx?a=63350&b=1&c=1"
+      },
+      {
+        "id":74,
+        "name":"Videotechniek 2",
+        "prerequisites":[5,6,2,3],
+        "equalrequisites":[72,73],
+        "graduationyear":false,
+        "start":1,
+        "duration":2,
+        "studypoints":4,
+        "url": "https://bamaflexweb.kdg.be/BMFUIDetailxOLOD.aspx?a=63349&b=1&c=1"
+      },
+      {
+        "id":61,
+        "name":"Software Engineering Virtual-3D 2",
         "prerequisites":[16],
         "equalrequisites":[],
         "graduationyear":false,
         "start":1,
         "duration":1,
-        "studypoints":4,
-        "url": "https://bamaflexweb.kdg.be/BMFUIDetailxOLOD.aspx?a=63400&b=1&c=1"
+        "studypoints":0,
+        "url": "https://bamaflexweb.kdg.be/BMFUIDetailxOLOD.aspx?a=63413&b=1&c=1"
       },
       {
-        "id":40,
-        "name":"Web Back-End 2",
-        "prerequisites":[16,19],
+        "id":75,
+        "name":"Videoproductie Audio-Video 2",
+        "prerequisites":[5,6,7,8],
         "equalrequisites":[],
         "graduationyear":false,
-        "start":1,
-        "duration":2,
-        "studypoints":5,
-        "url": "https://bamaflexweb.kdg.be/BMFUIDetailxOLOD.aspx?a=63402&b=1&c=1"
-      },
-      {
-        "id":41,
-        "name":"Web Front-End 2",
-        "prerequisites":[16,19,4,17,19],
-        "equalrequisites":[],
-        "graduationyear":false,
-        "start":1,
-        "duration":2,
-        "studypoints":4,
-        "url": "https://bamaflexweb.kdg.be/BMFUIDetailxOLOD.aspx?a=63414&b=1&c=1"
+        "start":2,
+        "duration":1,
+        "studypoints":3,
+        "url": "https://bamaflexweb.kdg.be/BMFUIDetailxOLOD.aspx?a=65813&b=1&c=1"
       }
     ]
   },
@@ -522,70 +533,81 @@
         "url": "https://bamaflexweb.kdg.be/BMFUIDetailxOLOD.aspx?a=65820&b=1&c=1"
       },
       {
-        "id":47,
-        "name":"Afstudeerwerk Web-UX 3",
+        "id":76,
+        "name":"Afstudeerwerk Audio-Video 3",
         "prerequisites":[],
         "equalrequisites":[],
         "graduationyear":true,
         "start":3,
         "duration":2,
         "studypoints":12,
-        "url": "https://bamaflexweb.kdg.be/BMFUIDetailxOLOD.aspx?a=63381&b=1&c=1"
+        "url": "https://bamaflexweb.kdg.be/BMFUIDetailxOLOD.aspx?a=63389&b=1&c=1"
       },
       {
-        "id":48,
-        "name":"Project Web-UX 3",
-        "prerequisites":[33,34,32,36,37,38,39,40,41],
-        "equalrequisites":[50,51,52],
-        "graduationyear":false,
-        "start":1,
-        "duration":2,
-        "studypoints":8,
-        "url": "https://bamaflexweb.kdg.be/BMFUIDetailxOLOD.aspx?a=63381&b=1&c=1"
+        "id":77,
+        "name":"Compositing 3",
+        "prerequisites":[],
+        "equalrequisites":[],
+        "graduationyear":true,
+        "start":3,
+        "duration":1,
+        "studypoints":3,
+        "url": "https://bamaflexweb.kdg.be/BMFUIDetailxOLOD.aspx?a=63390&b=1&c=1"
       },
       {
-        "id":49,
-        "name":"Stage Web-UX 3",
+        "id":80,
+        "name":"Stage Audio-Video 3",
         "prerequisites":[],
         "equalrequisites":[],
         "graduationyear":true,
         "start":3,
         "duration":2,
-        "studypoints":15,
-        "url": "https://bamaflexweb.kdg.be/BMFUIDetailxOLOD.aspx?a=63380&b=1&c=1"
+        "studypoints":12,
+        "url": "https://bamaflexweb.kdg.be/BMFUIDetailxOLOD.aspx?a=63358&b=1&c=1"
       },
       {
-        "id":50,
-        "name":"Web Design 3",
-        "prerequisites":[27,28],
+        "id":78,
+        "name":"Opname En Weergave 3",
+        "prerequisites":[72,73,74],
         "equalrequisites":[],
         "graduationyear":false,
         "start":1,
         "duration":2,
         "studypoints":4,
-        "url": "https://bamaflexweb.kdg.be/BMFUIDetailxOLOD.aspx?a=63385&b=1&c=1"
+        "url": "https://bamaflexweb.kdg.be/BMFUIDetailxOLOD.aspx?a=63393&b=1&c=1"
       },
       {
-        "id":51,
-        "name":"Web Development 3",
-        "prerequisites":[40,41],
+        "id":81,
+        "name":"Studio 3",
+        "prerequisites":[72,73,74],
         "equalrequisites":[],
         "graduationyear":false,
         "start":1,
-        "duration":2,
+        "duration":1,
         "studypoints":4,
-        "url": "https://bamaflexweb.kdg.be/BMFUIDetailxOLOD.aspx?a=63384&b=1&c=1"
+        "url": "https://bamaflexweb.kdg.be/BMFUIDetailxOLOD.aspx?a=63392&b=1&c=1"
       },
       {
-        "id":52,
-        "name":"Web Specialisatie 3",
-        "prerequisites":[40,41,27,28],
+        "id":79,
+        "name":"Project Audio-Video 3",
+        "prerequisites":[],
         "equalrequisites":[],
-        "graduationyear":false,
+        "graduationyear":true,
         "start":1,
-        "duration":2,
+        "duration":3,
+        "studypoints":8,
+        "url": "https://bamaflexweb.kdg.be/BMFUIDetailxOLOD.aspx?a=63391&b=1&c=1"
+      },
+      {
+        "id":82,
+        "name":"Workshop Audio-Video 3",
+        "prerequisites":[],
+        "equalrequisites":[],
+        "graduationyear":true,
+        "start":1,
+        "duration":3,
         "studypoints":3,
-        "url": "https://bamaflexweb.kdg.be/BMFUIDetailxOLOD.aspx?a=63383&b=1&c=11"
+        "url": "https://bamaflexweb.kdg.be/BMFUIDetailxOLOD.aspx?a=63394&b=1&c=1"
       }
     ]
   }

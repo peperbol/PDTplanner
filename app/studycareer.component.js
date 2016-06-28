@@ -76,7 +76,7 @@ var StudyCareerComponent = (function () {
     };
     StudyCareerComponent.prototype.loadProgram = function () {
         var _this = this;
-        this.programService.getProgram('mct-web')
+        this.programService.getProgram('mct-av')
             .subscribe(function (result) { return _this.program = result; }, function (error) { return _this.errorMessage = error; });
     };
     StudyCareerComponent.prototype.isValid = function () {

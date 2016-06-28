@@ -77,7 +77,7 @@ export class StudyCareerComponent implements OnInit{
    }
 
   loadProgram(){
-    this.programService.getProgram('mct-web')
+    this.programService.getProgram('mct-av')
                        .subscribe(
                           result => this.program = result,
                           error =>  this.errorMessage = <any>error

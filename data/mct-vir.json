@@ -352,6 +352,28 @@
         "url": "https://bamaflexweb.kdg.be/BMFUIDetailxOLOD.aspx?a=63368&b=1&c=1"
       },
       {
+        "id":53,
+        "name":"3D-Modeling 2",
+        "prerequisites":[21,1],
+        "equalrequisites":[],
+        "graduationyear":false,
+        "start":1,
+        "duration":1,
+        "studypoints":3,
+        "url": "https://bamaflexweb.kdg.be/BMFUIDetailxOLOD.aspx?a=63357&b=1&c=1"
+      },
+      {
+        "id":54,
+        "name":"Filmtaal 2",
+        "prerequisites":[7,8],
+        "equalrequisites":[],
+        "graduationyear":false,
+        "start":1,
+        "duration":2,
+        "studypoints":3,
+        "url": "https://bamaflexweb.kdg.be/BMFUIDetailxOLOD.aspx?a=63408&b=1&c=1"
+      },
+      {
         "id":32,
         "name":"Databanken 2",
         "prerequisites":[],
@@ -363,103 +385,92 @@
         "url": "https://bamaflexweb.kdg.be/BMFUIDetailxOLOD.aspx?a=63403&b=1&c=1"
       },
       {
-        "id":33,
+        "id":55,
         "name":"Mobile Software 2",
         "prerequisites":[4,1,10,11,16,17,18,19,20],
-        "equalrequisites":[34],
+        "equalrequisites":[56],
         "graduationyear":false,
         "start":2,
         "duration":2,
         "studypoints":3,
-        "url": "https://bamaflexweb.kdg.be/BMFUIDetailxOLOD.aspx?a=66068&b=1&c=1"
+        "url": "https://bamaflexweb.kdg.be/BMFUIDetailxOLOD.aspx?a=66065&b=1&c=1"
       },
       {
-        "id":34,
-        "name":"Concepting 2",
+        "id":56,
+        "name":"Game Fundamentals 2",
         "prerequisites":[4,1,10,11,16,17,18,19,20],
-        "equalrequisites":[33],
+        "equalrequisites":[55],
         "graduationyear":false,
         "start":2,
         "duration":2,
         "studypoints":3,
-        "url": "https://bamaflexweb.kdg.be/BMFUIDetailxOLOD.aspx?a=66069&b=1&c=1"
+        "url": "https://bamaflexweb.kdg.be/BMFUIDetailxOLOD.aspx?a=66066&b=1&c=1"
       },
       {
-        "id":35,
-        "name":"Programmeren Web-UX 2",
+        "id":57,
+        "name":"Programmeren Virtual-3D 2",
         "prerequisites":[16],
         "equalrequisites":[],
         "graduationyear":false,
         "start":1,
         "duration":2,
         "studypoints":5,
-        "url": "https://bamaflexweb.kdg.be/BMFUIDetailxOLOD.aspx?a=63401&b=1&c=1"
+        "url": "https://bamaflexweb.kdg.be/BMFUIDetailxOLOD.aspx?a=63411&b=1&c=1"
       },
       {
-        "id":36,
-        "name":"Projectmanagement Web-UX 2",
+        "id":58,
+        "name":"Projectmanagement Virtual-3D 2",
         "prerequisites":[16,20,19,18,17,1,4,10,11],
-        "equalrequisites":[23,24,25,37,38],
+        "equalrequisites":[23,24,25,59,60],
         "graduationyear":false,
         "start":2,
         "duration":1,
         "studypoints":1,
-        "url": "https://bamaflexweb.kdg.be/BMFUIDetailxOLOD.aspx?a=63398&b=1&c=1"
+        "url": "https://bamaflexweb.kdg.be/BMFUIDetailxOLOD.aspx?a=63406&b=1&c=1"
       },
       {
-        "id":37,
-        "name":"Projectontwikkeling Web-UX 2",
+        "id":59,
+        "name":"Projectontwikkeling Virtual-3D 2",
         "prerequisites":[16,20,19,18,17,1,4,10,11],
-        "equalrequisites":[23,24,25,36,38],
+        "equalrequisites":[23,24,25,58,60],
         "graduationyear":false,
         "start":3,
         "duration":2,
         "studypoints":5,
-        "url": "https://bamaflexweb.kdg.be/BMFUIDetailxOLOD.aspx?a=63397&b=1&c=1"
+        "url": "https://bamaflexweb.kdg.be/BMFUIDetailxOLOD.aspx?a=63405&b=1&c=1"
       },
       {
-        "id":38,
-        "name":"Workshop Web-UX 2",
+        "id":60,
+        "name":"Workshop Virtual-3D 2",
         "prerequisites":[16,20,19,18,17,1,4,10,11],
-        "equalrequisites":[23,24,25,37,36],
+        "equalrequisites":[23,24,25,58,59],
         "graduationyear":false,
         "start":1,
         "duration":4,
         "studypoints":1,
-        "url": "https://bamaflexweb.kdg.be/BMFUIDetailxOLOD.aspx?a=63396&b=1&c=1"
+        "url": "https://bamaflexweb.kdg.be/BMFUIDetailxOLOD.aspx?a=63404&b=1&c=1"
       },
       {
-        "id":39,
-        "name":"Software Engineering Web-UX 2",
+        "id":61,
+        "name":"Software Engineering Virtual-3D 2",
         "prerequisites":[16],
         "equalrequisites":[],
         "graduationyear":false,
         "start":1,
         "duration":1,
         "studypoints":4,
-        "url": "https://bamaflexweb.kdg.be/BMFUIDetailxOLOD.aspx?a=63400&b=1&c=1"
+        "url": "https://bamaflexweb.kdg.be/BMFUIDetailxOLOD.aspx?a=63413&b=1&c=1"
       },
       {
-        "id":40,
-        "name":"Web Back-End 2",
-        "prerequisites":[16,19],
+        "id":62,
+        "name":"Videoproductie Virtual-3D 2",
+        "prerequisites":[5,6,7,8],
         "equalrequisites":[],
         "graduationyear":false,
-        "start":1,
-        "duration":2,
-        "studypoints":5,
-        "url": "https://bamaflexweb.kdg.be/BMFUIDetailxOLOD.aspx?a=63402&b=1&c=1"
-      },
-      {
-        "id":41,
-        "name":"Web Front-End 2",
-        "prerequisites":[16,19,4,17,19],
-        "equalrequisites":[],
-        "graduationyear":false,
-        "start":1,
-        "duration":2,
-        "studypoints":4,
-        "url": "https://bamaflexweb.kdg.be/BMFUIDetailxOLOD.aspx?a=63414&b=1&c=1"
+        "start":2,
+        "duration":1,
+        "studypoints":3,
+        "url": "https://bamaflexweb.kdg.be/BMFUIDetailxOLOD.aspx?a=65814&b=1&c=1"
       }
     ]
   },
@@ -523,69 +534,69 @@
       },
       {
         "id":47,
-        "name":"Afstudeerwerk Web-UX 3",
+        "name":"Afstudeerwerk Virtual-3D 3",
         "prerequisites":[],
         "equalrequisites":[],
         "graduationyear":true,
         "start":3,
         "duration":2,
         "studypoints":12,
-        "url": "https://bamaflexweb.kdg.be/BMFUIDetailxOLOD.aspx?a=63381&b=1&c=1"
+        "url": "https://bamaflexweb.kdg.be/BMFUIDetailxOLOD.aspx?a=63387&b=1&c=1"
       },
       {
-        "id":48,
-        "name":"Project Web-UX 3",
-        "prerequisites":[33,34,32,36,37,38,39,40,41],
-        "equalrequisites":[50,51,52],
+        "id":67,
+        "name":"Virtual Reality Interfaces 3",
+        "prerequisites":[55,56,57],
+        "equalrequisites":[],
         "graduationyear":false,
         "start":1,
-        "duration":2,
-        "studypoints":8,
-        "url": "https://bamaflexweb.kdg.be/BMFUIDetailxOLOD.aspx?a=63381&b=1&c=1"
+        "duration":1,
+        "studypoints":4,
+        "url": "https://bamaflexweb.kdg.be/BMFUIDetailxOLOD.aspx?a=63359&b=1&c=1"
       },
       {
-        "id":49,
-        "name":"Stage Web-UX 3",
+        "id":66,
+        "name":"Stage Virtual-3D 3",
         "prerequisites":[],
         "equalrequisites":[],
         "graduationyear":true,
         "start":3,
         "duration":2,
         "studypoints":15,
-        "url": "https://bamaflexweb.kdg.be/BMFUIDetailxOLOD.aspx?a=63380&b=1&c=1"
+        "url": "https://bamaflexweb.kdg.be/BMFUIDetailxOLOD.aspx?a=63386&b=1&c=1"
       },
       {
-        "id":50,
-        "name":"Web Design 3",
-        "prerequisites":[27,28],
+        "id":63,
+        "name":"3D-Animation 3",
+        "prerequisites":[53,56,62,54],
         "equalrequisites":[],
         "graduationyear":false,
         "start":1,
         "duration":2,
         "studypoints":4,
-        "url": "https://bamaflexweb.kdg.be/BMFUIDetailxOLOD.aspx?a=63385&b=1&c=1"
+        "url": "https://bamaflexweb.kdg.be/BMFUIDetailxOLOD.aspx?a=63360&b=1&c=1"
       },
       {
-        "id":51,
-        "name":"Web Development 3",
-        "prerequisites":[40,41],
+        "id":64,
+        "name":"Game Fundamentals 3",
+        "prerequisites":[56,57,58,59,60,61],
         "equalrequisites":[],
         "graduationyear":false,
         "start":1,
-        "duration":2,
-        "studypoints":4,
-        "url": "https://bamaflexweb.kdg.be/BMFUIDetailxOLOD.aspx?a=63384&b=1&c=1"
-      },
-      {
-        "id":52,
-        "name":"Web Specialisatie 3",
-        "prerequisites":[40,41,27,28],
-        "equalrequisites":[],
-        "graduationyear":false,
-        "start":1,
-        "duration":2,
+        "duration":1,
         "studypoints":3,
-        "url": "https://bamaflexweb.kdg.be/BMFUIDetailxOLOD.aspx?a=63383&b=1&c=11"
+        "url": "https://bamaflexweb.kdg.be/BMFUIDetailxOLOD.aspx?a=63361&b=1&c=1"
+      },
+      {
+        "id":65,
+        "name":"Project Virtual-3D 3",
+        "prerequisites":[55,56,57,58,59,60,61,62,32],
+        "equalrequisites":[],
+        "graduationyear":false,
+        "start":1,
+        "duration":2,
+        "studypoints":8,
+        "url": "https://bamaflexweb.kdg.be/BMFUIDetailxOLOD.aspx?a=63388&b=1&c=1"
       }
     ]
   }
