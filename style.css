@@ -176,7 +176,8 @@ course>div:hover {
 course:hover>div a,
 course>div:hover a{
   color: lavender ;
-  text-decoration: underline;
+  /*text-decoration: underline;*/
+  border-bottom: 1px dotted lavender;
 
   margin: 0  0 0 15px;
   display: inline;
@@ -195,22 +196,24 @@ course a {
 }
 course>div:hover a:hover {
   color: white ;
+
+  border-bottom: 1px solid lavender;
 }
 course .studypoints {
   display: none;
   width: 30px;
-  height: 1.2em;
-  font-size: 0.8em;
+  height: 15px;
+  line-height: 15px;
+  font-size: 0.9em;
   border-radius: 5px;
- background: lavender  ;
+ background: Indigo    ;
    margin: 0 20px 0 5px;
-  color: MediumPurple;
-  padding: 5px 4px 3px;
-  font-weight: bold;
+  color: lavender;
+  padding: 4px 6px ;
 }
 
 course:hover .studypoints{
-  display: inline;
+  display: inline-block;
 }
 course .studypoints sup {
   font-size: 0.8em;
@@ -230,6 +233,10 @@ course button.fa
   bottom: 0;
   display: none ;
   color: lavender ;
+}
+course button.fa:hover
+{
+  color: white ;
 }
 
 course:hover button.fa
