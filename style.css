@@ -145,7 +145,7 @@ year>ul {
 
 course{
 
-    padding: 7px 0;
+    padding: 5px 0;
   width: 95%;
   display: flex;
   margin: 0 auto;
@@ -163,7 +163,7 @@ course>div{
   position: relative;
   color: MediumPurple ;
   display: inline-block;
-
+  height: 32px;
 }
 course:hover>div,
 course>div:hover {
@@ -171,15 +171,16 @@ course>div:hover {
   color: lavender ;
   width: auto !important;
   padding: 5px;
-  vertical-align: center;
+  vertical-align: baseline;
 }
 course:hover>div a,
 course>div:hover a{
   color: lavender ;
   /*text-decoration: underline;*/
   border-bottom: 1px dotted lavender;
-
+  box-sizing: border-box;
   margin: 0  0 0 15px;
+  height: 100%;
   display: inline;
 }
 course a {
@@ -187,7 +188,7 @@ course a {
   text-decoration: none;
   margin: 0 15px;
   display: block;
-  height: 1.5em;
+  height: 100%;
   line-height: 1.6em;
   text-overflow: ellipsis;
   font-size: 0.86em;
@@ -212,7 +213,7 @@ course .studypoints {
 }
 
 course:hover .studypoints{
-  display: inline-block;
+  display:  inline;
 }
 course .studypoints sup {
   font-size: 0.8em;
