@@ -79,6 +79,10 @@ export class StudyCareerComponent implements OnInit{
   openLoadDialog(){
     this.openLoadDialogEvent.emit({});
   }
+  saveFile(){
+    let blob = new Blob([JSON.stringify({'data':this.program})], {type: "text/plain;charset=utf-8"});
+    saveAs(blob, "mijnstudietraject.json");
+  }
 
   isValid():boolean{
     let elements : any[] = this.el.nativeElement.querySelector("course .invalid");

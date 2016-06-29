@@ -75,6 +75,10 @@ var StudyCareerComponent = (function () {
     StudyCareerComponent.prototype.openLoadDialog = function () {
         this.openLoadDialogEvent.emit({});
     };
+    StudyCareerComponent.prototype.saveFile = function () {
+        var blob = new Blob([JSON.stringify({ 'data': this.program })], { type: "text/plain;charset=utf-8" });
+        saveAs(blob, "mijnstudietraject.json");
+    };
     StudyCareerComponent.prototype.isValid = function () {
         var elements = this.el.nativeElement.querySelector("course .invalid");
         if (!elements)

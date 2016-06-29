@@ -37,7 +37,6 @@ export class AppComponent {
     this.loadDialog = true;
   }
   closeOverlayNow(){
-
       this.overlay = false;
       this.loadDialog = false;
   }
