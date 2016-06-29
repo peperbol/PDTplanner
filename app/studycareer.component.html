@@ -6,6 +6,9 @@
   </li>
 </ul>
 <div class="tools" #tools [style.top.px]="verticalscroll"  (window:resize)="updateVerticalScroll()" (document:scroll)="updateVerticalScroll()">
+  <button class="fa fa-calendar-o" (click)="openLoadDialog()"></button>
+  <button class="fa fa-floppy-o" ></button>
+  <hr>
   <button class="fa fa-plus-square-o"  (click)="addYear()"></button>
   <button class="fa fa-trash-o" (click)="deleteYear()" [class.disabled]="program&&program.length<=1"></button>
   <button class="fa fa-check"  [class.valid]="isValid()"></button>

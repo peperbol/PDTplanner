@@ -10,16 +10,48 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var studycareer_component_1 = require('./studycareer.component');
+var loadDialog_component_1 = require('./loadDialog.component');
+var program_service_1 = require('./program.service');
 var AppComponent = (function () {
-    function AppComponent() {
+    function AppComponent(programService) {
+        this.programService = programService;
+        this.overlay = true;
+        this.loadDialog = true;
     }
+    AppComponent.prototype.ngOnInit = function () {
+        this.setUrl('data/mct-web.json');
+    };
+    AppComponent.prototype.setUrl = function (url) {
+        var _this = this;
+        this.programService.getProgram(url)
+            .subscribe(function (result) { return _this.program = result; }, function (error) { });
+        this.closeOverlayNow();
+    };
+    AppComponent.prototype.setProgram = function (array) {
+        this.program = array;
+        this.closeOverlayNow();
+    };
+    AppComponent.prototype.openLoadDialog = function () {
+        this.overlay = true;
+        this.loadDialog = true;
+    };
+    AppComponent.prototype.closeOverlayNow = function () {
+        this.overlay = false;
+        this.loadDialog = false;
+    };
+    AppComponent.prototype.closeOverlay = function (e, overlayComp) {
+        if (e.target == overlayComp) {
+            this.closeOverlayNow();
+        }
+    };
     AppComponent = __decorate([
         core_1.Component({
             selector: 'body',
             templateUrl: 'app/app.component.html',
-            directives: [studycareer_component_1.StudyCareerComponent]
+            directives: [studycareer_component_1.StudyCareerComponent, loadDialog_component_1.LoadDialog],
+            providers: [program_service_1.ProgramService]
         }), 
-        __metadata('design:paramtypes', [])
+        __metadata('design:paramtypes', [program_service_1.ProgramService])
     ], AppComponent);
     return AppComponent;
 }());

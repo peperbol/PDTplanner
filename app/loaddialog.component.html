@@ -1,0 +1,23 @@
+<form >
+  <h2>Laad studietraject</h2>
+  <div class="typeselector" (click)="filemode= !filemode">
+    <span [class.selected]="!filemode">MDT</span><span [class.selected]="filemode">File</span>
+  </div>
+
+  <div *ngIf="!filemode">
+    <select [(ngModel)]=selectedMdt>
+      <option value="" *ngIf="!selectedMdt" >
+        Selecteer
+      </option>
+      <option *ngFor="let mdt of mdtKeys()" [value]="mdtOptions[mdt]" >{{mdt}}</option>
+    </select>
+    <button [class.disabled]="!selectedMdt" (click)="loadMdt()">Laad</button>
+  </div>
+
+  <div *ngIf="filemode">
+    <input type='file' name='jsonfile' accept=".json" id="file" class="inputfile" (change)="onFileChange($event)" />
+    <label for="file">{{filename}}</label>
+    <button [class.disabled]="!filejson" (click)="loadFile()">Laad</button>
+  </div>
+
+</form>

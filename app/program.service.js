@@ -15,10 +15,9 @@ require('./rxjs-operators');
 var ProgramService = (function () {
     function ProgramService(http) {
         this.http = http;
-        this.programUrl = 'data/'; // URL to web API
     }
     ProgramService.prototype.getProgram = function (name) {
-        return this.http.get(this.programUrl + name + '.json')
+        return this.http.get(name)
             .map(this.extractData)
             .catch(this.handleError);
     };

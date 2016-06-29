@@ -21,12 +21,12 @@ var StudyCareerComponent = (function () {
         this.verticalscroll = 0;
         this.pageheight = 0;
         this.windowheight = 0;
+        this.openLoadDialogEvent = new core_1.EventEmitter();
     }
     StudyCareerComponent.prototype.updateVerticalScroll = function () {
         this.verticalscroll = document.body.scrollTop;
         this.pageheight = document.body.offsetHeight;
         this.windowheight = window.innerHeight;
-        console.log(document.body.offsetHeight);
     };
     StudyCareerComponent.prototype.distanceFromBottom = function () {
         return Math.max(0, this.pageheight - this.verticalscroll - this.windowheight);
@@ -70,14 +70,10 @@ var StudyCareerComponent = (function () {
     };
     StudyCareerComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this.loadProgram();
-        console.log('hey');
         setTimeout(function () { return _this.updateVerticalScroll(); }, 50);
     };
-    StudyCareerComponent.prototype.loadProgram = function () {
-        var _this = this;
-        this.programService.getProgram('mct-av')
-            .subscribe(function (result) { return _this.program = result; }, function (error) { return _this.errorMessage = error; });
+    StudyCareerComponent.prototype.openLoadDialog = function () {
+        this.openLoadDialogEvent.emit({});
     };
     StudyCareerComponent.prototype.isValid = function () {
         var elements = this.el.nativeElement.querySelector("course .invalid");
@@ -96,12 +92,20 @@ var StudyCareerComponent = (function () {
         }
         return result;
     };
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', Array)
+    ], StudyCareerComponent.prototype, "program", void 0);
+    __decorate([
+        core_1.Output(), 
+        __metadata('design:type', Object)
+    ], StudyCareerComponent.prototype, "openLoadDialogEvent", void 0);
     StudyCareerComponent = __decorate([
         core_1.Component({
             selector: 'career',
             templateUrl: 'app/studycareer.component.html',
             directives: [year_component_1.YearComponent],
-            providers: [program_service_1.ProgramService, prerequisites_service_1.PrerequisitesService]
+            providers: [prerequisites_service_1.PrerequisitesService]
         }), 
         __metadata('design:paramtypes', [core_1.ElementRef, program_service_1.ProgramService, core_1.Renderer])
     ], StudyCareerComponent);

@@ -11,7 +11,7 @@ import { StudyCareerComponent } from './studycareer.component';
 export class YearComponent {
 
   @Input() year: Year;
-
+  
   @Output() moveBackEvent = new EventEmitter();
   @Output() moveForwardEvent = new EventEmitter();
   @Input() careerComponent: StudyCareerComponent ;

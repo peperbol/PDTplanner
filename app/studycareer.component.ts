@@ -1,4 +1,4 @@
-import { Component, Input,AfterViewChecked,OnInit, Renderer, ElementRef} from '@angular/core';
+import { Component, Input,EventEmitter, Output,AfterViewChecked,OnInit, Renderer, ElementRef} from '@angular/core';
 import { ProgramService } from './program.service';
 import { Year }           from './year';
 import { Course }           from './course';
@@ -9,11 +9,11 @@ import {PrerequisitesService} from './prerequisites.service';
   selector: 'career',
   templateUrl: 'app/studycareer.component.html',
   directives: [YearComponent],
-  providers: [ProgramService,PrerequisitesService]
+  providers: [PrerequisitesService]
 })
 export class StudyCareerComponent implements OnInit{
 
-  program: Year[];
+  @Input() program: Year[];
   errorMessage: string;
   me = this;
 
@@ -21,11 +21,12 @@ export class StudyCareerComponent implements OnInit{
   pageheight = 0;
   windowheight = 0;
 
+  @Output() openLoadDialogEvent = new EventEmitter();
+
   updateVerticalScroll(){
     this.verticalscroll = document.body.scrollTop;
     this.pageheight = document.body.offsetHeight;
     this.windowheight = window.innerHeight;
-    console.log(document.body.offsetHeight);
   }
   distanceFromBottom():number{
     return Math.max(0,this.pageheight - this.verticalscroll - this.windowheight);
@@ -71,18 +72,14 @@ export class StudyCareerComponent implements OnInit{
     setTimeout(()=>this.updateVerticalScroll(),50);
   }
   ngOnInit() {
-    this.loadProgram();
-      console.log('hey');
       setTimeout(()=>this.updateVerticalScroll(),50);
    }
 
-  loadProgram(){
-    this.programService.getProgram('mct-av')
-                       .subscribe(
-                          result => this.program = result,
-                          error =>  this.errorMessage = <any>error
-                       );
+
+  openLoadDialog(){
+    this.openLoadDialogEvent.emit({});
   }
+
   isValid():boolean{
     let elements : any[] = this.el.nativeElement.querySelector("course .invalid");
     if(!elements) return true;

@@ -30,7 +30,16 @@ career>ul{
   position: absolute;
   transition: top 0.1s;
 }
+hr{
 
+    -webkit-margin-before: 0;
+    -webkit-margin-after: 0;
+    -webkit-margin-start: 0;
+    -webkit-margin-end: 0;
+    margin: 5px;
+    border: none;
+    border-top: 2px dashed MediumPurple;
+}
 .tools>button.fa {
   color: MediumPurple;
     display: block;
@@ -41,10 +50,19 @@ career>ul{
   color: lavender;
   cursor: default;
 }
-
-.tools>button.fa.fa-check {
-  font-size: 0.8em;
+.tools>button.fa-calendar-o,
+.tools>button.fa-floppy-o{
   margin-top: 2px;
+    font-size: 0.9em;
+}
+
+.tools>button.fa-calendar-o,
+.tools>button.fa-check
+{
+    font-size: 0.8em;
+    margin-top: 2px;
+}
+.tools>button.fa-check {
   cursor: default;
 }
 .tools>button.fa.fa-check {
@@ -304,6 +322,91 @@ course>div.lastyear{
   display: inline;
   position: absolute;
   transform: translate(5px,12px);
+}
+.overlay {
+  position: fixed;
+  top:0;
+  bottom: 0;
+  left:0;
+  right: 0;
+  background-color: rgba(0,0,0,0.6);
+  z-index: 15;
+}
+.overlay>* {
+  position: absolute;
+  left:50%;
+  top: 50%;
+  transform:translate(-50%,-50%);
+  display:block;
+  z-index: 16;
+  margin: 0;
+}
+.loaddialog {
+  background-color: white;
+  border: 2px solid lightgrey;
+  padding: 20px;
+}
+.loaddialog .inputfile{
+  display: none;
+}
+.loaddialog select,
+.loaddialog .typeselector,
+.loaddialog .inputfile+label,
+.loaddialog button {
+  font-size: 1em;
+  padding: 10px;
+    color: MediumPurple;
+    background-color: lavender;
+    border-radius: 5px;
+    cursor: pointer;
+    border: none;
+    display: block;
+    width: 200px;
+    text-align: center;
+    margin: 10px 5px;
+      -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer */
+     -khtml-user-select: none; /* KHTML browsers (e.g. Konqueror) */
+    -webkit-user-select: none; /* Chrome, Safari, and Opera */
+    -webkit-touch-callout: none;
+    white-space: nowrap;
+    box-sizing:border-box;
+}
+
+.loaddialog button {
+
+    color: lavender;
+    background-color: ForestGreen;
+}
+.loaddialog .disabled {
+  color: lightgrey;
+  background-color: grey;
+  cursor: default;
+}
+.loaddialog .inputfile:focus+label,
+.loaddialog .inputfile+label:hover {
+    background-color: MediumPurple;
+    color:white;
+}
+
+.loaddialog h2{
+  margin-top: 0;
+}
+.loaddialog .typeselector{
+  padding: 0
+}
+
+.loaddialog .typeselector>*{
+  padding: 10px;
+  display: inline-block;
+  width: 50%;
+  box-sizing: border-box;
+  text-align: center;
+    border-radius: 5px;
+}
+.loaddialog .typeselector>.selected{
+  background-color: mediumpurple;
+    color:white;
 }
 .credits {
   font-family: Arial;
