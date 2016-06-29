@@ -10,7 +10,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var studycareer_component_1 = require('./studycareer.component');
-var loadDialog_component_1 = require('./loadDialog.component');
+var loaddialog_component_1 = require('./loaddialog.component');
 var program_service_1 = require('./program.service');
 var AppComponent = (function () {
     function AppComponent(programService) {
@@ -48,7 +48,7 @@ var AppComponent = (function () {
         core_1.Component({
             selector: 'body',
             templateUrl: 'app/app.component.html',
-            directives: [studycareer_component_1.StudyCareerComponent, loadDialog_component_1.LoadDialog],
+            directives: [studycareer_component_1.StudyCareerComponent, loaddialog_component_1.LoadDialog],
             providers: [program_service_1.ProgramService]
         }), 
         __metadata('design:paramtypes', [program_service_1.ProgramService])

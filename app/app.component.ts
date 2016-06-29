@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { StudyCareerComponent } from './studycareer.component';
-import { LoadDialog } from './loadDialog.component';
+import { LoadDialog } from './loaddialog.component';
 import { ProgramService } from './program.service';
 import { Year }           from './year';
 @Component({
