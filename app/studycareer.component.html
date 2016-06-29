@@ -1,5 +1,3 @@
-
-
 <ul class="program">
   <li *ngFor="let yearElement of program">
     <year [year]="yearElement" [careerComponent]="me" [distanceFromBottom]="distanceFromBottom()" (moveBackEvent)="moveCourseBack($event.index, $event.year)" (moveForwardEvent)="moveCourseForward($event.index, $event.year)"></year>

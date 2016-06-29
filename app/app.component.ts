@@ -23,8 +23,8 @@ export class AppComponent {
   setUrl(url){
     this.programService.getProgram(url)
                        .subscribe(
-                          result => this.program = result,
-                          error => {}
+                          result => this.program = result{},
+                          error => {console.log(error)}
                        );
     this.closeOverlayNow();
   }

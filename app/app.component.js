@@ -24,7 +24,7 @@ var AppComponent = (function () {
     AppComponent.prototype.setUrl = function (url) {
         var _this = this;
         this.programService.getProgram(url)
-            .subscribe(function (result) { return _this.program = result; }, function (error) { });
+            .subscribe(function (result) { return _this.program = result; }, {}, function (error) { console.log(error); });
         this.closeOverlayNow();
     };
     AppComponent.prototype.setProgram = function (array) {

@@ -1,4 +1,4 @@
-<form >
+
   <h2>Laad studietraject</h2>
   <div class="typeselector" (click)="filemode= !filemode">
     <span [class.selected]="!filemode">MDT</span><span [class.selected]="filemode">File</span>
@@ -19,5 +19,3 @@
     <label for="file">{{filename}}</label>
     <button [class.disabled]="!filejson" (click)="loadFile()">Laad</button>
   </div>
-
-</form>
