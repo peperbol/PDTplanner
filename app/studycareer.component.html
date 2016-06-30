@@ -4,12 +4,12 @@
   </li>
 </ul>
 <div class="tools" #tools [style.top.px]="verticalscroll"  (window:resize)="updateVerticalScroll()" (document:scroll)="updateVerticalScroll()">
-  <button class="fa fa-folder-open-o" (click)="openLoadDialog()"></button>
-  <button class="fa fa-floppy-o" (click)="saveFile()"></button>
+  <button class="fa fa-folder-open-o" (click)="openLoadDialog()" title="Open studietraject"></button>
+  <button class="fa fa-floppy-o" (click)="saveFile()" title="Sla studietraject op"></button>
   <hr>
-  <button class="fa fa-plus-square-o"  (click)="addYear()"></button>
-  <button class="fa fa-trash-o" (click)="deleteYear()" [class.disabled]="program&&program.length<=1"></button>
-  <button class="fa fa-check"  [class.valid]="isValid()"></button>
+  <button class="fa fa-plus-square-o"  (click)="addYear()" title="Voeg een nieuw jaar toe"></button>
+  <button class="fa fa-trash-o" (click)="deleteYear()" [class.disabled]="program&&program.length<=1" title="Verwijder het laatste jaar"></button>
+  <button class="fa fa-check"  [class.valid]="isValid()" [title]="isValid()?'Alle volgtijdelijkheden kloppen':'Sommige volgtijdelijkheden zijn fout'"></button>
   <div class="credits">
     <p>Gemaakt door <strong>Pepijn Willekens</strong></p>
     <a href="http://www.pepijnwillekens.com" target="_blank">www.pepijnwillekens.com</a>
