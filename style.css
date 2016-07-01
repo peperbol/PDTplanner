@@ -6,7 +6,7 @@ outline: none;
 }
 
 .button {
-  padding: 2px 6px 3px;
+  padding: 3px 6px 3px;
 }
 career, year {
   display: block;
@@ -301,9 +301,9 @@ button{
   content: '';
   height:0;
   width: 0;
-	border-left: 4px solid transparent;
-	border-right: 4px solid transparent;
-	border-bottom: 4px solid black;
+	border-left: 6px solid transparent;
+	border-right: 6px solid transparent;
+	border-bottom: 6px solid black;
   top: -4px;
   left: 50%;
   display: block;
@@ -320,48 +320,47 @@ button{
   display: none;
   border-radius: 5px;
   background-color: black;
-  color: lightgrey;
-  padding: 3px;
-  bottom: -33px;
+  bottom: -30px;
   left: 50%;
   transform: translate(-50%,0);
-  z-index: 7;
+  z-index: 10;
   font-size: 18px;
   vertical-align: middle;
+  padding: 6px;
+  height: 16px;
+}
+.courseoptions span {
+  font-size: 0.8em;
+}
+.courseoptions button {
+  background: none;
+  border: none;
+  color: lavender;
+  margin:0;
+  font-weight: bolder;
+}
+
+.courseoptions button:not(:first-child) {
+  border-left: 1.5px solid lavender;
 }
 
 .courseoptions button:hover {
   color: white;
 }
 
-.courseoptions button:focus {
+.courseoptions button.selected {
   color: mediumpurple;
-}
-.courseoptions .icon-pipe:hover{
-  background-image: url('img/icon/pipe.png');
-}
-.courseoptions .icon-pipe:focus{
-  background-image: url('img/icon/pipe-mediumpurple.png');
 }
 .courseoptions>*{
   display: inline-block;
 }
-.icon-pipe {
-  margin-top: 4px;
-  margin-left: 4px;
-  width: 17px;
-    height: 17px;
-    background-image: url('img/icon/pipe-grey.png');
-    border: none;
-    background-size: contain;
-    background-color: transparent;
-}
+
 course>div.invalid{
   background-color: LightPink   ;
 }
 
-course>div.invalid *,
-course:hover>div.invalid *{
+course>div.invalid>*,
+course:hover>div.invalid>*{
   color: FireBrick  ;
 }
 course>div.invalid a:hover{
@@ -376,21 +375,68 @@ course:hover>div.invalid .studypoints{
   background-color: FireBrick ;
 }
 
-course>div.reqwrong {
-  border: 2px solid Coral ;
-
-  padding: 3px 0px;
-}
-course>div.reqgood {
-  border: 2px solid ForestGreen  ;
-
-  padding: 3px 0px;
-}
 course>div.lastyear{
     border-bottom: 1px solid MediumPurple     ;
   box-sizing: border-box;
   padding: 5px 2px 4px;
 }
+course>div.dispensation{
+}
+course>div.dispensation,
+course>div.dispensation>div:not(.courseoptions),
+course>div.dispensation :not(.courseoptions)>*{
+background-color: lightgrey !important;
+}
+course>div.dispensation,
+course>div.dispensation>*:not(.courseoptions),
+course>div.dispensation :not(.courseoptions)>*{
+color: grey !important;
+}
+course>div.nopass::before,
+course>div.nopass::after{
+  content: '';
+  display: block;
+  width: 8px;;
+  top:-6px;
+  height: 40px;
+  position: absolute;
+  margin-top: 0;
+  background-color: IndianRed     ;
+  border-radius: 2px;
+}
+
+course>div.nopass{
+  border: 2px solid IndianRed       ;
+
+  padding: 3px 0px;
+}
+course>div.nopass::before{
+  left:-5px;
+}
+
+course>div.nopass::after{
+  right:-5px;
+}
+
+course>div.reqwrong {
+  border: 2px solid FireBrick ;
+
+  padding: 3px 0px;
+}
+
+course>div.reqwrong::before,
+course>div.reqwrong::after{
+  background-color: FireBrick;
+}
+course>div.reqgood {
+  border: 2px solid ForestGreen  ;
+  padding: 3px 0px;
+}
+course>div.reqgood::before,
+course>div.reqgood::after{
+  background-color: ForestGreen;
+}
+
 .exceedmaxsp {
   color:FireBrick;
 }

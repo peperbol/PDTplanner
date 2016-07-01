@@ -27,13 +27,13 @@ var YearComponent = (function () {
         return this.year.courses.indexOf(course);
     };
     YearComponent.prototype.getTotalPoints = function () {
-        if (this.year.courses.length > 0)
-            return Math.round(this.year.courses.map(function (e) { return e.studypoints; }).reduce(function (t, e) { return t + e; }));
+        if (this.year.courses.filter(function (e) { return !e.dispensation; }).length > 0)
+            return Math.round(this.year.courses.filter(function (e) { return !e.dispensation; }).map(function (e) { return e.studypoints; }).reduce(function (t, e) { return t + e; }));
         return 0;
     };
     YearComponent.prototype.getTotalPointsOfP = function (p) {
-        if (this.year.courses.filter(function (e) { return ((e.start) <= p) && ((e.start + e.duration) > p); }).length > 0)
-            return Math.round(this.year.courses.filter(function (e) { return ((e.start) <= p) && ((e.start + e.duration) > p); }).map(function (e) { return e.studypoints / e.duration; }).reduce(function (t, e) { return t + e; }));
+        if (this.year.courses.filter(function (e) { return ((e.start) <= p) && ((e.start + e.duration) > p) && !e.dispensation; }).length > 0)
+            return Math.round(this.year.courses.filter(function (e) { return ((e.start) <= p) && ((e.start + e.duration) > p) && !e.dispensation; }).map(function (e) { return e.studypoints / e.duration; }).reduce(function (t, e) { return t + e; }));
         return 0;
     };
     __decorate([

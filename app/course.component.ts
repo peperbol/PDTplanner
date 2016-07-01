@@ -66,6 +66,16 @@ export class CourseComponent {
     return this.course.prerequisites.some(e=>e<0);
   }
 
+  buisClick(){
+    this.course.pass = !this.course.pass;
+    this.course.dispensation = false;
+  }
+
+  vrijstellingClick(){
+      this.course.dispensation = !this.course.dispensation
+      this.course.pass = true;
+  }
+
   moveBack(){this.moveBackEvent.emit(this.course)}
   moveForward(){this.moveForwardEvent.emit(this.course)}
   areRequisitesMet(): boolean{

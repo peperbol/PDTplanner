@@ -55,6 +55,14 @@ var CourseComponent = (function () {
     CourseComponent.prototype.isFinalYear = function () {
         return this.course.prerequisites.some(function (e) { return e < 0; });
     };
+    CourseComponent.prototype.buisClick = function () {
+        this.course.pass = !this.course.pass;
+        this.course.dispensation = false;
+    };
+    CourseComponent.prototype.vrijstellingClick = function () {
+        this.course.dispensation = !this.course.dispensation;
+        this.course.pass = true;
+    };
     CourseComponent.prototype.moveBack = function () { this.moveBackEvent.emit(this.course); };
     CourseComponent.prototype.moveForward = function () { this.moveForwardEvent.emit(this.course); };
     CourseComponent.prototype.areRequisitesMet = function () {

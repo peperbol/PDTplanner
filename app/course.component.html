@@ -1,14 +1,14 @@
 <i [ngStyle]="{'flex-grow':(course.start-1)}" ></i>
 <div [ngStyle]="{'flex-grow':(course.duration)}" [class.invalid]="!areRequisitesMet() " [class.lastyear]="course.graduationyear"
-  [class.reqgood]="isGood()" [class.reqwrong]="isWrong()">
+  [class.reqgood]="isGood()" [class.reqwrong]="isWrong()" [class.nopass]="!course.pass" [class.dispensation]="course.dispensation">
   <button class="fa fa-chevron-left" (click)="moveBack()" *ngIf="!course.graduationyear"></button>
   <a [href]="course.url" target="_blank" >{{course.name}}</a>
 
   <button class="fa fa-chevron-right" (click)="moveForward()" *ngIf="!course.graduationyear"> </button>
   <div class="studypoints">{{course.studypoints}} <sup>SP</sup></div>
   <div class="courseoptions" [class.shown]="showOptions">
-    <button class="icon-pipe" title="gebuist"></button>
-    <button class="fa fa-check-square" title="vrijstelling"></button>
+    <button [class.selected]="!course.pass" title="gebuist" (click)="buisClick()" >Buis</button><!--
+ --><button [class.selected]="course.dispensation" title="vrijstelling" (click)="vrijstellingClick()">Vrijstelling</button>
   </div>
 </div>
 <i [ngStyle]="{'flex-grow':5-course.start-course.duration}"></i>
