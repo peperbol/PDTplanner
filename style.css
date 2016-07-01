@@ -4,6 +4,10 @@ body{
 :focus {
 outline: none;
 }
+
+.button {
+  padding: 2px 6px 3px;
+}
 career, year {
   display: block;
 }
@@ -253,8 +257,9 @@ course .studypoints sup {
 button.fa {
   background: none;
   border: none;
+  color: inherit;
 }
-course button.fa
+course :not(.courseoptions)>button.fa
 {
   position: absolute;
   padding: 2px 5px 0;
@@ -265,24 +270,24 @@ course button.fa
   display: none ;
   color: lavender ;
 }
-course button.fa:hover
+course :not(.courseoptions)>button.fa:hover
 {
   color: white ;
 }
 
-course:hover button.fa
+course:hover :not(.courseoptions)>button.fa
 {
   display: block ;
 }
-course button.fa~button
+course :not(.courseoptions)>button.fa~button
 {
   right: 0px;
   left:auto;
 }
-career>ul>li:first-child course button.fa:first-child{
+career>ul>li:first-child course :not(.courseoptions)>button.fa:first-child{
   display: none !important;
 }
-career>ul>li:last-child course button.fa~button{
+career>ul>li:last-child course :not(.courseoptions)>button.fa~button{
   display: none !important;
 }
 career>ul>li:last-child course .studypoints {
@@ -290,6 +295,66 @@ career>ul>li:last-child course .studypoints {
 }
 button{
   cursor: pointer;
+}
+
+.courseoptions::before {
+  content: '';
+  height:0;
+  width: 0;
+	border-left: 4px solid transparent;
+	border-right: 4px solid transparent;
+	border-bottom: 4px solid black;
+  top: -4px;
+  left: 50%;
+  display: block;
+  position: absolute;
+  transform: translate(-4px,0);
+}
+
+.courseoptions.shown{
+
+  display: inline;
+}
+.courseoptions {
+  position: absolute;
+  display: none;
+  border-radius: 5px;
+  background-color: black;
+  color: lightgrey;
+  padding: 3px;
+  bottom: -33px;
+  left: 50%;
+  transform: translate(-50%,0);
+  z-index: 7;
+  font-size: 18px;
+  vertical-align: middle;
+}
+
+.courseoptions button:hover {
+  color: white;
+}
+
+.courseoptions button:focus {
+  color: mediumpurple;
+}
+.courseoptions .icon-pipe:hover{
+  background-image: url('img/icon/pipe.png');
+}
+.courseoptions .icon-pipe:focus{
+  background-image: url('img/icon/pipe-mediumpurple.png');
+}
+.courseoptions>*{
+  display: inline-block;
+}
+.icon-pipe {
+  margin-top: 4px;
+  margin-left: 4px;
+  width: 17px;
+    height: 17px;
+    background-image: url('img/icon/pipe-grey.png');
+    border: none;
+    background-size: contain;
+    background-color: transparent;
 }
 course>div.invalid{
   background-color: LightPink   ;

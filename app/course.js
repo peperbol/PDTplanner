@@ -1,6 +1,6 @@
 "use strict";
 var Course = (function () {
-    function Course(id, name, prerequisites, equalrequisites, graduationyear, start, duration, studypoints, url) {
+    function Course(id, name, prerequisites, equalrequisites, graduationyear, start, duration, studypoints, pass, dispensation, url) {
         this.id = id;
         this.name = name;
         this.prerequisites = prerequisites;
@@ -9,6 +9,8 @@ var Course = (function () {
         this.start = start;
         this.duration = duration;
         this.studypoints = studypoints;
+        this.pass = pass;
+        this.dispensation = dispensation;
         this.url = url;
     }
     return Course;

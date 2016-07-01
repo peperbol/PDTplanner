@@ -1,11 +1,14 @@
-import { Component, Input,Output,EventEmitter } from '@angular/core';
+import { Component, Input,Output,EventEmitter, ElementRef } from '@angular/core';
 import { Course } from './course';
 import { StudyCareerComponent } from './studycareer.component';
 import {NgClass} from '@angular/common';
 import {PrerequisitesService} from './prerequisites.service';
+import { Observable }     from 'rxjs/Observable';
+import { Subject }     from 'rxjs/Subject';
+import './rxjs-operators';
 
 @Component({
-  
+
   host:{
       "(mouseenter)":"mouseEnter()",
      "(mouseleave)":"mouseLeave()"
@@ -21,8 +24,21 @@ export class CourseComponent {
   @Output() moveForwardEvent = new EventEmitter();
   @Input() year :number;
   @Input() careerComponent: StudyCareerComponent;
+  hoverObservable :Observable<any>;
+  hoverSubscription: any;
+  showOptions =false;
 
-  constructor (private prerequisitesService : PrerequisitesService ){}
+  constructor (private prerequisitesService : PrerequisitesService , private el: ElementRef){
+
+    this.hoverObservable = new Observable(o=>{
+      setTimeout(() => {
+        o.next(2);
+      }, 1000);
+    });
+
+
+
+  }
 
   isGood(){
    return  (this.prerequisitesService.prerequisites.some(e=>e == this.course.id)&& this.prerequisitesService.year> this.year) ||
@@ -34,9 +50,16 @@ export class CourseComponent {
   }
   mouseEnter(){
     this.prerequisitesService.set(this.course.prerequisites,this.course.equalrequisites,this.year);
+    if(this.hoverSubscription)
+      this.hoverSubscription.unsubscribe();
+    this.hoverSubscription = this.hoverObservable.subscribe(e=>{
+      this.showOptions = true;
+    });
   }
   mouseLeave(){
     this.prerequisitesService.clear();
+    this.hoverSubscription.unsubscribe();
+    this.showOptions =false;
   }
 
   isFinalYear():boolean{

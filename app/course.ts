@@ -8,6 +8,8 @@ export class Course {
     public start : number,
     public duration : number,
     public studypoints : number,
+    public pass : boolean,
+    public dispensation : boolean,
     public url : string
   ) { }
 }

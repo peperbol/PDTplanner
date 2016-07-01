@@ -12,6 +12,8 @@
         "start":3,
         "duration":2,
         "studypoints":3,
+        "pass": true,
+        "dispensation": false,
         "url": "https://bamaflexweb.kdg.be/BMFUIDetailxOLOD.aspx?a=63330&b=1&c=1"
       },
       {
@@ -23,6 +25,8 @@
         "start":1,
         "duration":4,
         "studypoints":2,
+        "pass": true,
+        "dispensation": false,
         "url": "https://bamaflexweb.kdg.be/BMFUIDetailxOLOD.aspx?a=63332&b=1&c=1"
 
       },
@@ -35,6 +39,8 @@
         "start":1,
         "duration":4,
         "studypoints":2,
+        "pass": true,
+        "dispensation": false,
         "url": "https://bamaflexweb.kdg.be/BMFUIDetailxOLOD.aspx?a=63333&b=1&c=1"
 
       },
@@ -47,6 +53,8 @@
         "start":1,
         "duration":1,
         "studypoints":3,
+        "pass": true,
+        "dispensation": false,
         "url": "https://bamaflexweb.kdg.be/BMFUIDetailxOLOD.aspx?a=63319&b=1&c=1"
       },
       {
@@ -58,6 +66,8 @@
         "start":3,
         "duration":2,
         "studypoints":3,
+        "pass": true,
+        "dispensation": false,
         "url": "https://bamaflexweb.kdg.be/BMFUIDetailxOLOD.aspx?a=63322&b=1&c=1"
       },
       {
@@ -69,6 +79,8 @@
         "start":4,
         "duration":1,
         "studypoints":2,
+        "pass": true,
+        "dispensation": false,
         "url": "https://bamaflexweb.kdg.be/BMFUIDetailxOLOD.aspx?a=63323&b=1&c=1"
       },
       {
@@ -80,6 +92,8 @@
         "start":1,
         "duration":1,
         "studypoints":2,
+        "pass": true,
+        "dispensation": false,
         "url": "https://bamaflexweb.kdg.be/BMFUIDetailxOLOD.aspx?a=63343&b=1&c=1"
       },
       {
@@ -91,6 +105,8 @@
         "start":3,
         "duration":1,
         "studypoints":2,
+        "pass": true,
+        "dispensation": false,
         "url": "https://bamaflexweb.kdg.be/BMFUIDetailxOLOD.aspx?a=63344&b=1&c=1"
       },
       {
@@ -102,6 +118,8 @@
         "start":2,
         "duration":2,
         "studypoints":3,
+        "pass": true,
+        "dispensation": false,
         "url": "https://bamaflexweb.kdg.be/BMFUIDetailxOLOD.aspx?a=63341&b=1&c=1"
       },
       {
@@ -113,6 +131,8 @@
         "start":2,
         "duration":1,
         "studypoints":2,
+        "pass": true,
+        "dispensation": false,
         "url": "https://bamaflexweb.kdg.be/BMFUIDetailxOLOD.aspx?a=63307&b=1&c=1"
       },
       {
@@ -124,6 +144,8 @@
         "start":4,
         "duration":1,
         "studypoints":2,
+        "pass": true,
+        "dispensation": false,
         "url": "https://bamaflexweb.kdg.be/BMFUIDetailxOLOD.aspx?a=63308&b=1&c=1"
       },
       {
@@ -135,6 +157,8 @@
         "start":1,
         "duration":4,
         "studypoints":2,
+        "pass": true,
+        "dispensation": false,
         "url": "https://bamaflexweb.kdg.be/BMFUIDetailxOLOD.aspx?a=63335&b=1&c=1"
       },
       {
@@ -146,6 +170,8 @@
         "start":1,
         "duration":4,
         "studypoints":2,
+        "pass": true,
+        "dispensation": false,
         "url": "https://bamaflexweb.kdg.be/BMFUIDetailxOLOD.aspx?a=63336&b=1&c=1"
       },
       {
@@ -157,6 +183,8 @@
         "start":3,
         "duration":2,
         "studypoints":3,
+        "pass": true,
+        "dispensation": false,
         "url": "https://bamaflexweb.kdg.be/BMFUIDetailxOLOD.aspx?a=63324&b=1&c=1"
       },
       {
@@ -168,6 +196,8 @@
         "start":1,
         "duration":1,
         "studypoints":3,
+        "pass": true,
+        "dispensation": false,
         "url": "https://bamaflexweb.kdg.be/BMFUIDetailxOLOD.aspx?a=63317&b=1&c=1"
       },
       {
@@ -179,6 +209,8 @@
         "start":1,
         "duration":3,
         "studypoints":5,
+        "pass": true,
+        "dispensation": false,
         "url": "https://bamaflexweb.kdg.be/BMFUIDetailxOLOD.aspx?a=63309&b=1&c=1"
       },
       {
@@ -190,6 +222,8 @@
         "start":3,
         "duration":1,
         "studypoints":4,
+        "pass": true,
+        "dispensation": false,
         "url": "https://bamaflexweb.kdg.be/BMFUIDetailxOLOD.aspx?a=63329&b=1&c=1"
       },
       {
@@ -201,6 +235,8 @@
         "start":1,
         "duration":2,
         "studypoints":3,
+        "pass": true,
+        "dispensation": false,
         "url": "https://bamaflexweb.kdg.be/BMFUIDetailxOLOD.aspx?a=63342&b=1&c=1"
       },
       {
@@ -212,6 +248,8 @@
         "start":4,
         "duration":1,
         "studypoints":3,
+        "pass": true,
+        "dispensation": false,
         "url": "https://bamaflexweb.kdg.be/BMFUIDetailxOLOD.aspx?a=63328&b=1&c=1"
       },
       {
@@ -223,6 +261,8 @@
         "start":1,
         "duration":1,
         "studypoints":3,
+        "pass": true,
+        "dispensation": false,
         "url": "https://bamaflexweb.kdg.be/BMFUIDetailxOLOD.aspx?a=63318&b=1&c=1"
       },
       {
@@ -234,6 +274,8 @@
         "start":1,
         "duration":3,
         "studypoints":6,
+        "pass": true,
+        "dispensation": false,
         "url": "https://bamaflexweb.kdg.be/BMFUIDetailxOLOD.aspx?a=63320&b=1&c=1"
       }
     ]
@@ -250,6 +292,8 @@
         "start":3,
         "duration":2,
         "studypoints":3,
+        "pass": true,
+        "dispensation": false,
         "url": "https://bamaflexweb.kdg.be/BMFUIDetailxOLOD.aspx?a=63310&b=1&c=1"
       },
       {
@@ -261,6 +305,8 @@
         "start":1,
         "duration":1,
         "studypoints":2,
+        "pass": true,
+        "dispensation": false,
         "url": "https://bamaflexweb.kdg.be/BMFUIDetailxOLOD.aspx?a=63339&b=1&c=1"
       },
       {
@@ -272,6 +318,8 @@
         "start":2,
         "duration":1,
         "studypoints":2,
+        "pass": true,
+        "dispensation": false,
         "url": "https://bamaflexweb.kdg.be/BMFUIDetailxOLOD.aspx?a=63311&b=1&c=1"
       },
       {
@@ -283,6 +331,8 @@
         "start":4,
         "duration":1,
         "studypoints":2,
+        "pass": true,
+        "dispensation": false,
         "url": "https://bamaflexweb.kdg.be/BMFUIDetailxOLOD.aspx?a=63312&b=1&c=1"
       },
       {
@@ -294,6 +344,8 @@
         "start":2,
         "duration":1,
         "studypoints":3,
+        "pass": true,
+        "dispensation": false,
         "url": "https://bamaflexweb.kdg.be/BMFUIDetailxOLOD.aspx?a=63346&b=1&c=1"
       },
       {
@@ -305,6 +357,8 @@
         "start":4,
         "duration":1,
         "studypoints":3,
+        "pass": true,
+        "dispensation": false,
         "url": "https://bamaflexweb.kdg.be/BMFUIDetailxOLOD.aspx?a=63326&b=1&c=1"
       },
       {
@@ -316,6 +370,8 @@
         "start":2,
         "duration":1,
         "studypoints":1,
+        "pass": true,
+        "dispensation": false,
         "url": "https://bamaflexweb.kdg.be/BMFUIDetailxOLOD.aspx?a=63327&b=1&c=1"
       },
       {
@@ -327,6 +383,8 @@
         "start":3,
         "duration":2,
         "studypoints":3,
+        "pass": true,
+        "dispensation": false,
         "url": "https://bamaflexweb.kdg.be/BMFUIDetailxOLOD.aspx?a=63338&b=1&c=1"
       },
       {
@@ -338,6 +396,8 @@
         "start":1,
         "duration":1,
         "studypoints":3,
+        "pass": true,
+        "dispensation": false,
         "url": "https://bamaflexweb.kdg.be/BMFUIDetailxOLOD.aspx?a=63345&b=1&c=1"
       },
       {
@@ -349,6 +409,8 @@
         "start":3,
         "duration":2,
         "studypoints":4,
+        "pass": true,
+        "dispensation": false,
         "url": "https://bamaflexweb.kdg.be/BMFUIDetailxOLOD.aspx?a=63368&b=1&c=1"
       },
       {
@@ -360,6 +422,8 @@
         "start":4,
         "duration":1,
         "studypoints":3,
+        "pass": true,
+        "dispensation": false,
         "url": "https://bamaflexweb.kdg.be/BMFUIDetailxOLOD.aspx?a=63357&b=1&c=1"
       },
       {
@@ -371,6 +435,8 @@
         "start":1,
         "duration":2,
         "studypoints":3,
+        "pass": true,
+        "dispensation": false,
         "url": "https://bamaflexweb.kdg.be/BMFUIDetailxOLOD.aspx?a=63408&b=1&c=1"
       },
       {
@@ -382,6 +448,8 @@
         "start":1,
         "duration":1,
         "studypoints":3,
+        "pass": true,
+        "dispensation": false,
         "url": "https://bamaflexweb.kdg.be/BMFUIDetailxOLOD.aspx?a=63351&b=1&c=1"
       },
       {
@@ -393,6 +461,8 @@
         "start":4,
         "duration":1,
         "studypoints":4,
+        "pass": true,
+        "dispensation": false,
         "url": "https://bamaflexweb.kdg.be/BMFUIDetailxOLOD.aspx?a=63352&b=1&c=1"
       },
       {
@@ -404,6 +474,8 @@
         "start":3,
         "duration":1,
         "studypoints":6,
+        "pass": true,
+        "dispensation": false,
         "url": "https://bamaflexweb.kdg.be/BMFUIDetailxOLOD.aspx?a=66066&b=1&c=1"
       },
       {
@@ -415,6 +487,8 @@
         "start":1,
         "duration":4,
         "studypoints":2,
+        "pass": true,
+        "dispensation": false,
         "url": "https://bamaflexweb.kdg.be/BMFUIDetailxOLOD.aspx?a=63356&b=1&c=1"
       },
       {
@@ -426,6 +500,8 @@
         "start":1,
         "duration":2,
         "studypoints":4,
+        "pass": true,
+        "dispensation": false,
         "url": "https://bamaflexweb.kdg.be/BMFUIDetailxOLOD.aspx?a=63348&b=1&c=1"
       },
       {
@@ -437,6 +513,8 @@
         "start":1,
         "duration":1,
         "studypoints":2,
+        "pass": true,
+        "dispensation": false,
         "url": "https://bamaflexweb.kdg.be/BMFUIDetailxOLOD.aspx?a=63350&b=1&c=1"
       },
       {
@@ -448,6 +526,8 @@
         "start":1,
         "duration":2,
         "studypoints":4,
+        "pass": true,
+        "dispensation": false,
         "url": "https://bamaflexweb.kdg.be/BMFUIDetailxOLOD.aspx?a=63349&b=1&c=1"
       },
       {
@@ -459,6 +539,8 @@
         "start":1,
         "duration":1,
         "studypoints":0,
+        "pass": true,
+        "dispensation": false,
         "url": "https://bamaflexweb.kdg.be/BMFUIDetailxOLOD.aspx?a=63413&b=1&c=1"
       },
       {
@@ -470,6 +552,8 @@
         "start":2,
         "duration":1,
         "studypoints":3,
+        "pass": true,
+        "dispensation": false,
         "url": "https://bamaflexweb.kdg.be/BMFUIDetailxOLOD.aspx?a=65813&b=1&c=1"
       }
     ]
@@ -486,6 +570,8 @@
         "start":1,
         "duration":2,
         "studypoints":2,
+        "pass": true,
+        "dispensation": false,
         "url": "https://bamaflexweb.kdg.be/BMFUIDetailxOLOD.aspx?a=63314&b=1&c=1"
       },
       {
@@ -497,6 +583,8 @@
         "start":1,
         "duration":2,
         "studypoints":3,
+        "pass": true,
+        "dispensation": false,
         "url": "https://bamaflexweb.kdg.be/BMFUIDetailxOLOD.aspx?a=63315&b=1&c=1"
       },
       {
@@ -508,6 +596,8 @@
         "start":1,
         "duration":4,
         "studypoints":4,
+        "pass": true,
+        "dispensation": false,
         "url": "https://bamaflexweb.kdg.be/BMFUIDetailxOLOD.aspx?a=63316&b=1&c=1"
       },
       {
@@ -519,6 +609,8 @@
         "start":1,
         "duration":4,
         "studypoints":1,
+        "pass": true,
+        "dispensation": false,
         "url": "https://bamaflexweb.kdg.be/BMFUIDetailxOLOD.aspx?a=65819&b=1&c=1"
       },
       {
@@ -530,6 +622,8 @@
         "start":1,
         "duration":2,
         "studypoints":4,
+        "pass": true,
+        "dispensation": false,
         "url": "https://bamaflexweb.kdg.be/BMFUIDetailxOLOD.aspx?a=65820&b=1&c=1"
       },
       {
@@ -541,6 +635,8 @@
         "start":3,
         "duration":2,
         "studypoints":12,
+        "pass": true,
+        "dispensation": false,
         "url": "https://bamaflexweb.kdg.be/BMFUIDetailxOLOD.aspx?a=63389&b=1&c=1"
       },
       {
@@ -552,6 +648,8 @@
         "start":3,
         "duration":1,
         "studypoints":3,
+        "pass": true,
+        "dispensation": false,
         "url": "https://bamaflexweb.kdg.be/BMFUIDetailxOLOD.aspx?a=63390&b=1&c=1"
       },
       {
@@ -563,6 +661,8 @@
         "start":3,
         "duration":2,
         "studypoints":12,
+        "pass": true,
+        "dispensation": false,
         "url": "https://bamaflexweb.kdg.be/BMFUIDetailxOLOD.aspx?a=63358&b=1&c=1"
       },
       {
@@ -574,6 +674,8 @@
         "start":1,
         "duration":2,
         "studypoints":4,
+        "pass": true,
+        "dispensation": false,
         "url": "https://bamaflexweb.kdg.be/BMFUIDetailxOLOD.aspx?a=63393&b=1&c=1"
       },
       {
@@ -585,6 +687,8 @@
         "start":1,
         "duration":1,
         "studypoints":4,
+        "pass": true,
+        "dispensation": false,
         "url": "https://bamaflexweb.kdg.be/BMFUIDetailxOLOD.aspx?a=63392&b=1&c=1"
       },
       {
@@ -596,6 +700,8 @@
         "start":1,
         "duration":3,
         "studypoints":8,
+        "pass": true,
+        "dispensation": false,
         "url": "https://bamaflexweb.kdg.be/BMFUIDetailxOLOD.aspx?a=63391&b=1&c=1"
       },
       {
@@ -607,6 +713,8 @@
         "start":1,
         "duration":3,
         "studypoints":3,
+        "pass": true,
+        "dispensation": false,
         "url": "https://bamaflexweb.kdg.be/BMFUIDetailxOLOD.aspx?a=63394&b=1&c=1"
       }
     ]

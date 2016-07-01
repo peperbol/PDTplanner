@@ -13,11 +13,20 @@ var course_1 = require('./course');
 var studycareer_component_1 = require('./studycareer.component');
 var common_1 = require('@angular/common');
 var prerequisites_service_1 = require('./prerequisites.service');
+var Observable_1 = require('rxjs/Observable');
+require('./rxjs-operators');
 var CourseComponent = (function () {
-    function CourseComponent(prerequisitesService) {
+    function CourseComponent(prerequisitesService, el) {
         this.prerequisitesService = prerequisitesService;
+        this.el = el;
         this.moveBackEvent = new core_1.EventEmitter();
         this.moveForwardEvent = new core_1.EventEmitter();
+        this.showOptions = false;
+        this.hoverObservable = new Observable_1.Observable(function (o) {
+            setTimeout(function () {
+                o.next(2);
+            }, 1000);
+        });
     }
     CourseComponent.prototype.isGood = function () {
         var _this = this;
@@ -30,10 +39,18 @@ var CourseComponent = (function () {
             (this.prerequisitesService.equalrequisites.some(function (e) { return e == _this.course.id; }) && this.prerequisitesService.year < this.year);
     };
     CourseComponent.prototype.mouseEnter = function () {
+        var _this = this;
         this.prerequisitesService.set(this.course.prerequisites, this.course.equalrequisites, this.year);
+        if (this.hoverSubscription)
+            this.hoverSubscription.unsubscribe();
+        this.hoverSubscription = this.hoverObservable.subscribe(function (e) {
+            _this.showOptions = true;
+        });
     };
     CourseComponent.prototype.mouseLeave = function () {
         this.prerequisitesService.clear();
+        this.hoverSubscription.unsubscribe();
+        this.showOptions = false;
     };
     CourseComponent.prototype.isFinalYear = function () {
         return this.course.prerequisites.some(function (e) { return e < 0; });
@@ -80,7 +97,7 @@ var CourseComponent = (function () {
             templateUrl: 'app/course.component.html',
             directives: [common_1.NgClass]
         }), 
-        __metadata('design:paramtypes', [prerequisites_service_1.PrerequisitesService])
+        __metadata('design:paramtypes', [prerequisites_service_1.PrerequisitesService, core_1.ElementRef])
     ], CourseComponent);
     return CourseComponent;
 }());
