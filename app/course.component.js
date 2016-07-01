@@ -15,6 +15,7 @@ var common_1 = require('@angular/common');
 var prerequisites_service_1 = require('./prerequisites.service');
 var Observable_1 = require('rxjs/Observable');
 require('./rxjs-operators');
+var deepCopy_1 = require('./deepCopy');
 var CourseComponent = (function () {
     function CourseComponent(prerequisitesService, el) {
         this.prerequisitesService = prerequisitesService;
@@ -52,16 +53,46 @@ var CourseComponent = (function () {
         this.hoverSubscription.unsubscribe();
         this.showOptions = false;
     };
+    CourseComponent.prototype.canGoBack = function () {
+        var _this = this;
+        return !this.course.graduationyear && this.year > 1 && this.careerComponent.program[this.year - 2].courses.filter(function (e) { return e.id == _this.course.id; }).length <= 0;
+    };
+    CourseComponent.prototype.canGoForward = function () {
+        var _this = this;
+        return !this.course.graduationyear && this.year < this.careerComponent.program.length && this.careerComponent.program[this.year].courses.filter(function (e) { return e.id == _this.course.id; }).length <= 0;
+    };
     CourseComponent.prototype.isFinalYear = function () {
         return this.course.prerequisites.some(function (e) { return e < 0; });
     };
+    Object.defineProperty(CourseComponent.prototype, "noPass", {
+        set: function (value) {
+            this.course.pass = !value;
+            var clone = deepCopy_1.owl.copy(this.course);
+            clone.pass = true;
+            if (value) {
+                this.careerComponent.addCourse(clone, this.year, this.careerComponent.program[this.year - 1].courses.indexOf(this.course));
+            }
+            else {
+                this.careerComponent.removeCourseFromYears(this.course.id, this.year);
+            }
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(CourseComponent.prototype, "dispensation", {
+        set: function (value) {
+            this.course.dispensation = value;
+        },
+        enumerable: true,
+        configurable: true
+    });
     CourseComponent.prototype.buisClick = function () {
-        this.course.pass = !this.course.pass;
-        this.course.dispensation = false;
+        this.noPass = this.course.pass;
+        this.dispensation = false;
     };
     CourseComponent.prototype.vrijstellingClick = function () {
-        this.course.dispensation = !this.course.dispensation;
-        this.course.pass = true;
+        this.dispensation = !this.course.dispensation;
+        this.noPass = false;
     };
     CourseComponent.prototype.moveBack = function () { this.moveBackEvent.emit(this.course); };
     CourseComponent.prototype.moveForward = function () { this.moveForwardEvent.emit(this.course); };

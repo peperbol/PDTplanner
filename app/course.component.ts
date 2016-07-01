@@ -6,6 +6,7 @@ import {PrerequisitesService} from './prerequisites.service';
 import { Observable }     from 'rxjs/Observable';
 import { Subject }     from 'rxjs/Subject';
 import './rxjs-operators';
+import {owl} from './deepCopy'
 
 @Component({
 
@@ -35,16 +36,13 @@ export class CourseComponent {
         o.next(2);
       }, 1000);
     });
-
-
-
   }
 
-  isGood(){
+  isGood():boolean{
    return  (this.prerequisitesService.prerequisites.some(e=>e == this.course.id)&& this.prerequisitesService.year> this.year) ||
         (this.prerequisitesService.equalrequisites.some(e=>e == this.course.id)&& this.prerequisitesService.year >= this.year);
   }
-  isWrong(){
+  isWrong():boolean{
    return  (this.prerequisitesService.prerequisites.some(e=>e == this.course.id)&& this.prerequisitesService.year <= this.year) ||
         (this.prerequisitesService.equalrequisites.some(e=>e == this.course.id)&& this.prerequisitesService.year < this.year);
   }
@@ -61,19 +59,40 @@ export class CourseComponent {
     this.hoverSubscription.unsubscribe();
     this.showOptions =false;
   }
+  canGoBack():boolean{
+    return !this.course.graduationyear && this.year>1 && this.careerComponent.program[this.year-2].courses.filter(e=>e.id ==this.course.id).length <= 0;
+  }
+
+  canGoForward():boolean{
+    return !this.course.graduationyear && this.year< this.careerComponent.program.length && this.careerComponent.program[this.year].courses.filter(e=>e.id ==this.course.id).length <= 0;
+  }
 
   isFinalYear():boolean{
     return this.course.prerequisites.some(e=>e<0);
   }
+  set noPass(value:boolean){
 
-  buisClick(){
-    this.course.pass = !this.course.pass;
-    this.course.dispensation = false;
+    this.course.pass = !value;
+    let clone =owl.copy(this.course);
+    clone.pass =true;
+    if(value){
+      this.careerComponent.addCourse(clone, this.year, this.careerComponent.program[this.year-1].courses.indexOf(this.course));
+    }else{
+      this.careerComponent.removeCourseFromYears(this.course.id, this.year);
+    }
+  }
+  set dispensation(value:boolean){
+    this.course.dispensation = value;
   }
 
+  buisClick(){
+    this.noPass = this.course.pass;
+    this.dispensation = false;
+
+  }
   vrijstellingClick(){
-      this.course.dispensation = !this.course.dispensation
-      this.course.pass = true;
+      this.dispensation = !this.course.dispensation
+      this.noPass = false;
   }
 
   moveBack(){this.moveBackEvent.emit(this.course)}

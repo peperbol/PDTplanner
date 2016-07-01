@@ -81,6 +81,22 @@ var StudyCareerComponent = (function () {
         this.program[this.program.length - 1].courses = this.program[this.program.length - 1].courses.concat(lastY.courses);
         setTimeout(function () { return _this.updateVerticalScroll(false); }, 50);
     };
+    StudyCareerComponent.prototype.addCourse = function (course, year, index) {
+        if (year >= this.program.length)
+            this.addYear();
+        if (this.program[year].courses.length > index) {
+            this.program[year].courses.splice(index, 0, course);
+            console.log(5465);
+        }
+        else {
+            this.program[year].courses.push(course);
+        }
+    };
+    StudyCareerComponent.prototype.removeCourseFromYears = function (courseId, year) {
+        for (var i = year; i < this.program.length; i++) {
+            this.program[i].courses = this.program[i].courses.filter(function (e) { return e.id != courseId; });
+        }
+    };
     StudyCareerComponent.prototype.ngOnInit = function () {
         var _this = this;
         setTimeout(function () { return _this.updateVerticalScroll(false); }, 50);

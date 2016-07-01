@@ -88,6 +88,24 @@ export class StudyCareerComponent implements OnInit{
 
     setTimeout(()=>this.updateVerticalScroll(false),50);
   }
+  addCourse(course:Course, year:number, index:number){
+    if(year>= this.program.length) this.addYear();
+
+    if(this.program[year].courses.length > index)
+    {
+      this.program[year].courses.splice(index,0, course);
+      console.log(5465);
+    }else{
+      this.program[year].courses.push(course);
+    }
+  }
+
+  removeCourseFromYears(courseId:number, year:number){
+      for (let i = year; i < this.program.length; i++) {
+          this.program[i].courses = this.program[i].courses.filter(e=>e.id != courseId);
+      }
+  }
+
   ngOnInit() {
       setTimeout(()=>this.updateVerticalScroll(false),50);
    }
