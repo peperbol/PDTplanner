@@ -31,8 +31,10 @@ career>ul{
   font-size: 30px;
   width: 35px;
   position: absolute;
-  -webkit-transition: top 0.1s;
-  transition: top 0.1s;
+  transition: opacity 0.2s;
+}
+.hidden {
+  opacity: 0;
 }
 hr{
     margin: 5px;
@@ -109,7 +111,7 @@ year>h2{
   text-align: center;
   font-weight: normal;
 }
-
+/*
 body::after{
   content: '';
   display:block;
@@ -118,7 +120,7 @@ body::after{
   background: white;
   bottom: 0;
   width: 100%;
-}
+}*/
 year::after{
   content: '';
   display:block;
@@ -126,8 +128,6 @@ year::after{
 }
 year>div:last-child {
   margin-top: 15px;
-  -webkit-transition: bottom 0.05s;
-  transition: bottom 0.05s;
   left: 0;
   right: 0;
   position: absolute;
@@ -136,6 +136,7 @@ year>div:last-child {
   background: white;
   border-top:  1px solid lightgrey;
 
+  transition: opacity 0.2s;
 }
 
 

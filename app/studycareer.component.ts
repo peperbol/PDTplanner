@@ -4,6 +4,8 @@ import { Year }           from './year';
 import { Course }           from './course';
 import { YearComponent } from './year.component';
 import {PrerequisitesService} from './prerequisites.service';
+import { Observable }     from 'rxjs/Observable';
+import './rxjs-operators';
 
 @Component({
   selector: 'career',
@@ -20,18 +22,30 @@ export class StudyCareerComponent implements OnInit{
   verticalscroll = 0;
   pageheight = 0;
   windowheight = 0;
+  scrolling =false;
+  scrollingObservable :Observable<any>;
+
 
   @Output() openLoadDialogEvent = new EventEmitter();
 
-  updateVerticalScroll(){
+  updateVerticalScroll(scroll){
     this.verticalscroll = document.body.scrollTop;
     this.pageheight = document.body.offsetHeight;
     this.windowheight = window.innerHeight;
+    this.scrolling= scroll;
   }
   distanceFromBottom():number{
     return Math.max(0,this.pageheight - this.verticalscroll - this.windowheight);
   }
-  constructor (private el: ElementRef, private programService:ProgramService,private renderer: Renderer){}
+  constructor (private el: ElementRef, private programService:ProgramService,private renderer: Renderer){
+    this.scrollingObservable = Observable.fromEvent(document,"scroll")
+                                          .debounceTime(300)
+                                          .distinctUntilChanged();
+    this.scrollingObservable.subscribe(e=>{
+      this.scrolling = false;
+    });
+
+  }
 
   moveCourseBack(index:number, year:Year){
     this.moveCourse(year,this.program[this.getYearIndex(year)-1],index)
@@ -51,7 +65,7 @@ export class StudyCareerComponent implements OnInit{
         toY.courses.push(course);
       }
 
-      setTimeout(()=>this.updateVerticalScroll(),50);
+      setTimeout(()=>this.updateVerticalScroll(false),50);
   }
   getYearIndex(year:Year) : number{
     return this.program.indexOf(year);
@@ -62,17 +76,20 @@ export class StudyCareerComponent implements OnInit{
     this.program[this.program.length-1].courses = this.program[this.program.length-1].courses.filter(e=>!e.graduationyear);
     this.program.push({'order':this.program.length+1,'courses': courses});
 
-    setTimeout(()=>this.updateVerticalScroll(),50);
+    setTimeout(()=>{
+      this.updateVerticalScroll(false);
+
+    },50);
   }
   deleteYear(){
     if(this.program.length <= 1) return;
     let lastY = this.program.pop();
     this.program[this.program.length - 1].courses = this.program[this.program.length - 1].courses.concat(lastY.courses);
 
-    setTimeout(()=>this.updateVerticalScroll(),50);
+    setTimeout(()=>this.updateVerticalScroll(false),50);
   }
   ngOnInit() {
-      setTimeout(()=>this.updateVerticalScroll(),50);
+      setTimeout(()=>this.updateVerticalScroll(false),50);
    }
 
 

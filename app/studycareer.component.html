@@ -3,12 +3,12 @@
     <year [year]="yearElement" [careerComponent]="me" [distanceFromBottom]="distanceFromBottom()" (moveBackEvent)="moveCourseBack($event.index, $event.year)" (moveForwardEvent)="moveCourseForward($event.index, $event.year)"></year>
   </li>
 </ul>
-<div class="tools" #tools [style.top.px]="verticalscroll"  (window:resize)="updateVerticalScroll()" (document:scroll)="updateVerticalScroll()">
+<div class="tools" #tools [style.top.px]="verticalscroll" [class.hidden]="scrolling" (window:resize)="updateVerticalScroll(true)" (document:scroll)="updateVerticalScroll(true)">
   <button class="fa fa-folder-open-o" (click)="openLoadDialog()" title="Laad studietraject"></button>
   <button class="fa fa-floppy-o" (click)="saveFile()" title="Sla studietraject op"></button>
   <hr>
   <button class="fa fa-plus-square-o"  (click)="addYear()" title="Voeg een nieuw jaar toe"></button>
-  <button class="fa fa-trash-o" (click)="deleteYear()" [class.disabled]="program&&program.length<=1" title="Verwijder het laatste jaar"></button>
+  <button class="fa fa-trash-o" (click)="deleteYear()"  [class.disabled]="program&&program.length<=1" title="Verwijder het laatste jaar"></button>
   <button class="fa fa-check"  [class.valid]="isValid()" [title]="isValid()?'Alle volgtijdelijkheden kloppen':'Sommige volgtijdelijkheden zijn fout'"></button>
   <div class="credits">
     <p>Gemaakt door <strong>Pepijn Willekens</strong></p>

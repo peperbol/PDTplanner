@@ -12,8 +12,11 @@ var core_1 = require('@angular/core');
 var program_service_1 = require('./program.service');
 var year_component_1 = require('./year.component');
 var prerequisites_service_1 = require('./prerequisites.service');
+var Observable_1 = require('rxjs/Observable');
+require('./rxjs-operators');
 var StudyCareerComponent = (function () {
     function StudyCareerComponent(el, programService, renderer) {
+        var _this = this;
         this.el = el;
         this.programService = programService;
         this.renderer = renderer;
@@ -21,12 +24,20 @@ var StudyCareerComponent = (function () {
         this.verticalscroll = 0;
         this.pageheight = 0;
         this.windowheight = 0;
+        this.scrolling = false;
         this.openLoadDialogEvent = new core_1.EventEmitter();
+        this.scrollingObservable = Observable_1.Observable.fromEvent(document, "scroll")
+            .debounceTime(300)
+            .distinctUntilChanged();
+        this.scrollingObservable.subscribe(function (e) {
+            _this.scrolling = false;
+        });
     }
-    StudyCareerComponent.prototype.updateVerticalScroll = function () {
+    StudyCareerComponent.prototype.updateVerticalScroll = function (scroll) {
         this.verticalscroll = document.body.scrollTop;
         this.pageheight = document.body.offsetHeight;
         this.windowheight = window.innerHeight;
+        this.scrolling = scroll;
     };
     StudyCareerComponent.prototype.distanceFromBottom = function () {
         return Math.max(0, this.pageheight - this.verticalscroll - this.windowheight);
@@ -47,7 +58,7 @@ var StudyCareerComponent = (function () {
         else {
             toY.courses.push(course);
         }
-        setTimeout(function () { return _this.updateVerticalScroll(); }, 50);
+        setTimeout(function () { return _this.updateVerticalScroll(false); }, 50);
     };
     StudyCareerComponent.prototype.getYearIndex = function (year) {
         return this.program.indexOf(year);
@@ -58,7 +69,9 @@ var StudyCareerComponent = (function () {
         courses = this.program[this.program.length - 1].courses.filter(function (e) { return e.graduationyear; });
         this.program[this.program.length - 1].courses = this.program[this.program.length - 1].courses.filter(function (e) { return !e.graduationyear; });
         this.program.push({ 'order': this.program.length + 1, 'courses': courses });
-        setTimeout(function () { return _this.updateVerticalScroll(); }, 50);
+        setTimeout(function () {
+            _this.updateVerticalScroll(false);
+        }, 50);
     };
     StudyCareerComponent.prototype.deleteYear = function () {
         var _this = this;
@@ -66,11 +79,11 @@ var StudyCareerComponent = (function () {
             return;
         var lastY = this.program.pop();
         this.program[this.program.length - 1].courses = this.program[this.program.length - 1].courses.concat(lastY.courses);
-        setTimeout(function () { return _this.updateVerticalScroll(); }, 50);
+        setTimeout(function () { return _this.updateVerticalScroll(false); }, 50);
     };
     StudyCareerComponent.prototype.ngOnInit = function () {
         var _this = this;
-        setTimeout(function () { return _this.updateVerticalScroll(); }, 50);
+        setTimeout(function () { return _this.updateVerticalScroll(false); }, 50);
     };
     StudyCareerComponent.prototype.openLoadDialog = function () {
         this.openLoadDialogEvent.emit({});
