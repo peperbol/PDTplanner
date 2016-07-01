@@ -35,11 +35,6 @@ career>ul{
   transition: top 0.1s;
 }
 hr{
-
-    -webkit-margin-before: 0;
-    -webkit-margin-after: 0;
-    -webkit-margin-start: 0;
-    -webkit-margin-end: 0;
     margin: 5px;
     border: none;
     border-top: 2px dashed MediumPurple;
@@ -203,6 +198,9 @@ course>div:hover {
   color: lavender ;
   width: auto !important;
   padding: 5px;
+  -webkit-flex-basis: auto;
+      -ms-flex-preferred-size: auto;
+          flex-basis: auto;
   vertical-align: baseline;
 }
 course:hover>div a,
