@@ -7,8 +7,8 @@
   <button class="fa fa-chevron-right" (click)="moveForward()" *ngIf="!course.graduationyear"> </button>
   <div class="studypoints">{{course.studypoints}} <sup>SP</sup></div>
   <div class="courseoptions" [class.shown]="showOptions">
-    <button class="icon-pipe"></button>
-      <button class="fa fa-check-square"></button>
+    <button class="icon-pipe" title="gebuist"></button>
+    <button class="fa fa-check-square" title="vrijstelling"></button>
   </div>
 </div>
 <i [ngStyle]="{'flex-grow':5-course.start-course.duration}"></i>
