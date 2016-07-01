@@ -39,12 +39,13 @@ export class CourseComponent {
   }
 
   isGood():boolean{
-   return  (this.prerequisitesService.prerequisites.some(e=>e == this.course.id)&& this.prerequisitesService.year> this.year) ||
+   return  (this.course.pass&&(this.prerequisitesService.prerequisites.some(e=>e == this.course.id)&& this.prerequisitesService.year> this.year)) ||
         (this.prerequisitesService.equalrequisites.some(e=>e == this.course.id)&& this.prerequisitesService.year >= this.year);
   }
   isWrong():boolean{
    return  (this.prerequisitesService.prerequisites.some(e=>e == this.course.id)&& this.prerequisitesService.year <= this.year) ||
-        (this.prerequisitesService.equalrequisites.some(e=>e == this.course.id)&& this.prerequisitesService.year < this.year);
+        ((this.prerequisitesService.equalrequisites.some(e=>e == this.course.id)&& this.prerequisitesService.year < this.year)&&
+       this.year== this.careerComponent.getYearOf(this.course.id, e=>true) );
   }
   mouseEnter(){
     this.prerequisitesService.set(this.course.prerequisites,this.course.equalrequisites,this.year);
@@ -100,10 +101,10 @@ export class CourseComponent {
   areRequisitesMet(): boolean{
     let good = true;
     for (let i = 0; i < this.course.prerequisites.length; i++) {
-        good = good && this.year > this.careerComponent.getYearOf(this.course.prerequisites[i]);
+        good = good && this.year > this.careerComponent.getYearOf(this.course.prerequisites[i],e=>e.pass);
     }
     for (let i = 0; i < this.course.equalrequisites.length; i++) {
-        good = good && this.year >= this.careerComponent.getYearOf(this.course.equalrequisites[i]);
+        good = good && this.year >= this.careerComponent.getYearOf(this.course.equalrequisites[i],e=>true);
     }
     return good;
   }

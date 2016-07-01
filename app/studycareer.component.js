@@ -114,11 +114,11 @@ var StudyCareerComponent = (function () {
             return true;
         return elements.length <= 0;
     };
-    StudyCareerComponent.prototype.getYearOf = function (courseId) {
+    StudyCareerComponent.prototype.getYearOf = function (courseId, filter) {
         var result = -1;
         var i = 0;
         while (result < 0 && i < this.program.length) {
-            if (this.program[i].courses.some(function (e) { return e.id == courseId; })) {
+            if (this.program[i].courses.filter(filter).some(function (e) { return e.id == courseId; })) {
                 result = this.program[i].order;
             }
             i++;

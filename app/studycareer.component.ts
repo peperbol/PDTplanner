@@ -124,11 +124,11 @@ export class StudyCareerComponent implements OnInit{
     if(!elements) return true;
     return  elements.length <= 0;
   }
-  getYearOf(courseId:number): number{
+  getYearOf(courseId:number, filter): number{
     let result = -1;
     let i = 0;
     while (result < 0 && i< this.program.length){
-      if(this.program[i].courses.some(e=>e.id == courseId)){
+      if(this.program[i].courses.filter(filter).some(e=>e.id == courseId)){
         result = this.program[i].order;
       }
       i++;

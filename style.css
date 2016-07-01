@@ -401,12 +401,12 @@ course>div.nopass::after{
   height: 40px;
   position: absolute;
   margin-top: 0;
-  background-color: IndianRed     ;
+  background-color: MidnightBlue       ;
   border-radius: 2px;
 }
 
 course>div.nopass{
-  border: 2px solid IndianRed       ;
+  border: 2px solid MidnightBlue         ;
 
   padding: 3px 0px;
 }

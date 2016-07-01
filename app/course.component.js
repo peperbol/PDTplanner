@@ -31,13 +31,14 @@ var CourseComponent = (function () {
     }
     CourseComponent.prototype.isGood = function () {
         var _this = this;
-        return (this.prerequisitesService.prerequisites.some(function (e) { return e == _this.course.id; }) && this.prerequisitesService.year > this.year) ||
+        return (this.course.pass && (this.prerequisitesService.prerequisites.some(function (e) { return e == _this.course.id; }) && this.prerequisitesService.year > this.year)) ||
             (this.prerequisitesService.equalrequisites.some(function (e) { return e == _this.course.id; }) && this.prerequisitesService.year >= this.year);
     };
     CourseComponent.prototype.isWrong = function () {
         var _this = this;
         return (this.prerequisitesService.prerequisites.some(function (e) { return e == _this.course.id; }) && this.prerequisitesService.year <= this.year) ||
-            (this.prerequisitesService.equalrequisites.some(function (e) { return e == _this.course.id; }) && this.prerequisitesService.year < this.year);
+            ((this.prerequisitesService.equalrequisites.some(function (e) { return e == _this.course.id; }) && this.prerequisitesService.year < this.year) &&
+                this.year == this.careerComponent.getYearOf(this.course.id, function (e) { return true; }));
     };
     CourseComponent.prototype.mouseEnter = function () {
         var _this = this;
@@ -99,10 +100,10 @@ var CourseComponent = (function () {
     CourseComponent.prototype.areRequisitesMet = function () {
         var good = true;
         for (var i = 0; i < this.course.prerequisites.length; i++) {
-            good = good && this.year > this.careerComponent.getYearOf(this.course.prerequisites[i]);
+            good = good && this.year > this.careerComponent.getYearOf(this.course.prerequisites[i], function (e) { return e.pass; });
         }
         for (var i = 0; i < this.course.equalrequisites.length; i++) {
-            good = good && this.year >= this.careerComponent.getYearOf(this.course.equalrequisites[i]);
+            good = good && this.year >= this.careerComponent.getYearOf(this.course.equalrequisites[i], function (e) { return true; });
         }
         return good;
     };
