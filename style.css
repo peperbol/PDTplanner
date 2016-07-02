@@ -566,7 +566,7 @@ course>div.reqgood::after{
 .credits>button:hover {
   border: 1px solid grey;
   color:grey;
-
+  text-decoration: underline;
 }
 
 .credits>button+* {
