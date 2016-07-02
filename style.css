@@ -569,7 +569,7 @@ course>div.reqgood::after{
 }
 
 .credits>button+* {
-  margin-left: 10px;
+  margin-left: 5px;
 }
 .credits *{
   margin:0;
