@@ -44,7 +44,12 @@ export class StudyCareerComponent implements OnInit{
     this.scrollingObservable.subscribe(e=>{
       this.scrolling = false;
     });
-
+    this.scrollingObservable = Observable.fromEvent(window,"resize")
+                                          .debounceTime(300)
+                                          .distinctUntilChanged();
+    this.scrollingObservable.subscribe(e=>{
+      this.scrolling = false;
+    });
   }
 
   moveCourseBack(index:number, year:Year){

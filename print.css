@@ -1,0 +1,101 @@
+@media print{
+year>div:last-child {
+  bottom:0!important;
+  opacity:1 !important;
+}
+
+.tools {
+  display: none;
+}
+course {
+  display: block;
+}
+course>div {
+  background-color:  white !important ;
+  color: lavender ;
+  width: 100% !important;
+  -webkit-flex-basis: auto;
+      -ms-flex-preferred-size: auto;
+          flex-basis: auto;
+  max-width: 287px;
+
+    border: none !important ;
+    padding: 3px 0px !important;
+    text-align: left ;
+}
+course>div.invalid .studypoints::after {
+  content: "(1)";
+  display:inline-block;
+  margin-left: 4px;
+}
+
+course>div.nopass .studypoints::after {
+  content: "(2)";
+  display:inline-block;
+  margin-left: 4px;
+}
+course>div.nopass::after,
+course>div.nopass::before {
+  display: none;
+}
+
+course>div.dispensation {
+  display: none;
+}
+
+course>div button.fa{
+  display: none !important;
+}
+
+course>div .studypoints{
+  display: inline;
+  background-color: white !important;
+  color: black !important;
+  border: 1px solid black;
+  margin-right: 0;
+}
+*{
+color: black !important;
+}
+course>div a {
+  color:black !important;
+    color: lavender ;
+    /*text-decoration: underline;*/
+    border-bottom: 1px dotted lavender;
+    box-sizing: border-box;
+    margin: 0  0 0 15px;
+    height: 100%;
+    display: inline-block;
+    max-width: 195px;
+
+    vertical-align: -25%;
+    border: none !important;
+}
+.courseoptions {
+  display: none !important;
+}
+
+year>div:first-child>.foursplit{
+  display: none !important;
+}
+career>ul>li{
+  display: inline-block;
+  vertical-align: top;
+
+  text-align: center;
+  border: 1px solid black;
+
+}
+career>ul{
+  display: block;
+  width: 100%;
+  white-space: normal;
+  text-align: left;
+}
+career::before{
+
+    content: "(1) volgtijdelijkheid klopt niet voor dit vak \A (2) voor dit vak was je gebuist";
+    display:inline;
+
+  white-space: pre;
+}}

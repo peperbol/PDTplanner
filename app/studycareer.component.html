@@ -10,6 +10,7 @@
   <button class="fa fa-plus-square-o"  (click)="addYear()" title="Voeg een nieuw jaar toe"></button>
   <button class="fa fa-trash-o" (click)="deleteYear()"  [class.disabled]="program&&program.length<=1" title="Verwijder het laatste jaar"></button>
   <button class="fa fa-check"  [class.valid]="isValid()" [title]="isValid()?'Alle volgtijdelijkheden kloppen':'Sommige volgtijdelijkheden zijn fout'"></button>
+
   <div class="credits">
     <p>Gemaakt door <strong>Pepijn Willekens</strong></p>
     <a href="http://www.pepijnwillekens.com" target="_blank">www.pepijnwillekens.com</a>

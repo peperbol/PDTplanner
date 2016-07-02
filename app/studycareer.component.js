@@ -32,6 +32,12 @@ var StudyCareerComponent = (function () {
         this.scrollingObservable.subscribe(function (e) {
             _this.scrolling = false;
         });
+        this.scrollingObservable = Observable_1.Observable.fromEvent(window, "resize")
+            .debounceTime(300)
+            .distinctUntilChanged();
+        this.scrollingObservable.subscribe(function (e) {
+            _this.scrolling = false;
+        });
     }
     StudyCareerComponent.prototype.updateVerticalScroll = function (scroll) {
         this.verticalscroll = document.body.scrollTop;
