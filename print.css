@@ -53,6 +53,7 @@ course>div .studypoints{
   color: black !important;
   border: 1px solid black;
   margin-right: 0;
+  float: left;
 }
 *{
 color: black !important;
