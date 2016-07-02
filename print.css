@@ -85,20 +85,21 @@ career>ul>li{
 
   text-align: center;
   border: 1px solid black;
-
+ margin-right: 10px;
+margin-bottom: 10px;
 }
 career>ul{
   display: block;
   width: 100%;
   white-space: normal;
-  text-align: left;
+  text-align: center;
 }
 career::before{
 
     content: "(1) volgtijdelijkheid klopt niet voor dit vak \A (2) voor dit vak was je gebuist";
     display:inline;
 
-  white-space: pre;
+  /*white-space: pre;*/
 }
 .overlay {
   display:none !important;
