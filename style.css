@@ -206,7 +206,7 @@ course>div:hover {
   -webkit-flex-basis: auto;
       -ms-flex-preferred-size: auto;
           flex-basis: auto;
-  vertical-align: baseline;
+  max-width: 287px;
 }
 course:hover>div a,
 course>div:hover a{
@@ -216,7 +216,10 @@ course>div:hover a{
   box-sizing: border-box;
   margin: 0  0 0 15px;
   height: 100%;
-  display: inline;
+  display: inline-block;
+  max-width: 195px;
+
+  vertical-align: -25%;
 }
 course a {
   color: MediumPurple ;
