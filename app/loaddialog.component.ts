@@ -1,10 +1,13 @@
 import { Component, Output,EventEmitter } from '@angular/core';
+import { Mobile } from './mobile.service';
 
 @Component({
   selector: '.loaddialog',
-  templateUrl: 'app/loaddialog.component.html'
+  templateUrl: 'app/loaddialog.component.html',
+  providers: [ Mobile ]
 })
 export class LoadDialog {
+  constructor ( private mobile:Mobile){}
 
   filemode = false;
   file:any ;

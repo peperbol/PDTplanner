@@ -12,14 +12,16 @@ var core_1 = require('@angular/core');
 var program_service_1 = require('./program.service');
 var year_component_1 = require('./year.component');
 var prerequisites_service_1 = require('./prerequisites.service');
+var mobile_service_1 = require('./mobile.service');
 var Observable_1 = require('rxjs/Observable');
 require('./rxjs-operators');
 var StudyCareerComponent = (function () {
-    function StudyCareerComponent(el, programService, renderer) {
+    function StudyCareerComponent(el, programService, renderer, mobile) {
         var _this = this;
         this.el = el;
         this.programService = programService;
         this.renderer = renderer;
+        this.mobile = mobile;
         this.me = this;
         this.verticalscroll = 0;
         this.pageheight = 0;
@@ -111,6 +113,8 @@ var StudyCareerComponent = (function () {
         this.openLoadDialogEvent.emit({});
     };
     StudyCareerComponent.prototype.saveFile = function () {
+        if (this.mobile.mobileAndTabletcheck())
+            return;
         var blob = new Blob([JSON.stringify({ 'data': this.program })], { type: "text/plain;charset=utf-8" });
         saveAs(blob, "mijnstudietraject.json");
     };
@@ -144,9 +148,9 @@ var StudyCareerComponent = (function () {
             selector: 'career',
             templateUrl: 'app/studycareer.component.html',
             directives: [year_component_1.YearComponent],
-            providers: [prerequisites_service_1.PrerequisitesService]
+            providers: [prerequisites_service_1.PrerequisitesService, mobile_service_1.Mobile]
         }), 
-        __metadata('design:paramtypes', [core_1.ElementRef, program_service_1.ProgramService, core_1.Renderer])
+        __metadata('design:paramtypes', [core_1.ElementRef, program_service_1.ProgramService, core_1.Renderer, mobile_service_1.Mobile])
     ], StudyCareerComponent);
     return StudyCareerComponent;
 }());

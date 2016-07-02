@@ -3,7 +3,8 @@ import { ProgramService } from './program.service';
 import { Year }           from './year';
 import { Course }           from './course';
 import { YearComponent } from './year.component';
-import {PrerequisitesService} from './prerequisites.service';
+import { PrerequisitesService } from './prerequisites.service';
+import { Mobile } from './mobile.service';
 import { Observable }     from 'rxjs/Observable';
 import './rxjs-operators';
 
@@ -11,7 +12,7 @@ import './rxjs-operators';
   selector: 'career',
   templateUrl: 'app/studycareer.component.html',
   directives: [YearComponent],
-  providers: [PrerequisitesService]
+  providers: [PrerequisitesService, Mobile ]
 })
 export class StudyCareerComponent implements OnInit{
 
@@ -37,7 +38,7 @@ export class StudyCareerComponent implements OnInit{
   distanceFromBottom():number{
     return Math.max(0,this.pageheight - this.verticalscroll - this.windowheight);
   }
-  constructor (private el: ElementRef, private programService:ProgramService,private renderer: Renderer){
+  constructor (private el: ElementRef, private programService:ProgramService,private renderer: Renderer, private mobile:Mobile){
     this.scrollingObservable = Observable.fromEvent(document,"scroll")
                                           .debounceTime(300)
                                           .distinctUntilChanged();
@@ -120,6 +121,7 @@ export class StudyCareerComponent implements OnInit{
     this.openLoadDialogEvent.emit({});
   }
   saveFile(){
+    if(this.mobile.mobileAndTabletcheck()) return;
     let blob = new Blob([JSON.stringify({'data':this.program})], {type: "text/plain;charset=utf-8"});
     saveAs(blob, "mijnstudietraject.json");
   }

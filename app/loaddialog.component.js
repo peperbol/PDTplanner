@@ -9,8 +9,10 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+var mobile_service_1 = require('./mobile.service');
 var LoadDialog = (function () {
-    function LoadDialog() {
+    function LoadDialog(mobile) {
+        this.mobile = mobile;
         this.filemode = false;
         this.filename = "Kies een file...";
         this.mdtUrl = "data/";
@@ -64,9 +66,10 @@ var LoadDialog = (function () {
     LoadDialog = __decorate([
         core_1.Component({
             selector: '.loaddialog',
-            templateUrl: 'app/loaddialog.component.html'
+            templateUrl: 'app/loaddialog.component.html',
+            providers: [mobile_service_1.Mobile]
         }), 
-        __metadata('design:paramtypes', [])
+        __metadata('design:paramtypes', [mobile_service_1.Mobile])
     ], LoadDialog);
     return LoadDialog;
 }());

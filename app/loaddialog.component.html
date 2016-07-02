@@ -1,6 +1,6 @@
 
   <h2>Laad studietraject</h2>
-  <div class="typeselector" (click)="filemode= !filemode">
+  <div class="typeselector" (click)="filemode= !filemode" *ngIf="!mobile.mobileAndTabletcheck()">
     <span [class.selected]="!filemode">MDT</span><span [class.selected]="filemode">File</span>
   </div>
 

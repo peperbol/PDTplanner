@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { StudyCareerComponent } from './studycareer.component';
 import { LoadDialog } from './loaddialog.component';
 import { ProgramService } from './program.service';
@@ -9,16 +9,19 @@ import { Year }           from './year';
   directives: [StudyCareerComponent,LoadDialog],
   providers: [ProgramService]
 })
-export class AppComponent {
+export class AppComponent implements OnInit{
 
-  constructor (private programService:ProgramService){}
-  overlay = true;
-  loadDialog = true;
+  overlay = false;
+  loadDialog = false;
   program : Year[];
   overlayComp:any;
 
+  constructor (private programService:ProgramService){
+
+  }
   ngOnInit() {
       this.setUrl('data/mct-web.json');
+      setTimeout(()=>this.openLoadDialog(),50);
    }
   setUrl(url){
     this.programService.getProgram(url)
@@ -35,6 +38,7 @@ export class AppComponent {
   openLoadDialog(){
     this.overlay = true;
     this.loadDialog = true;
+    console.log('hi');
   }
   closeOverlayNow(){
       this.overlay = false;

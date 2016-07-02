@@ -15,11 +15,13 @@ var program_service_1 = require('./program.service');
 var AppComponent = (function () {
     function AppComponent(programService) {
         this.programService = programService;
-        this.overlay = true;
-        this.loadDialog = true;
+        this.overlay = false;
+        this.loadDialog = false;
     }
     AppComponent.prototype.ngOnInit = function () {
+        var _this = this;
         this.setUrl('data/mct-web.json');
+        setTimeout(function () { return _this.openLoadDialog(); }, 50);
     };
     AppComponent.prototype.setUrl = function (url) {
         var _this = this;
@@ -34,6 +36,7 @@ var AppComponent = (function () {
     AppComponent.prototype.openLoadDialog = function () {
         this.overlay = true;
         this.loadDialog = true;
+        console.log('hi');
     };
     AppComponent.prototype.closeOverlayNow = function () {
         this.overlay = false;
