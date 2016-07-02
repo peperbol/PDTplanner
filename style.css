@@ -55,6 +55,7 @@ hr{
   color: lavender;
   cursor: default;
 }
+
 .tools>button.fa-calendar-o,
 .tools>button.fa-floppy-o{
   margin-top: 2px;
