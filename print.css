@@ -98,4 +98,8 @@ career::before{
     display:inline;
 
   white-space: pre;
-}}
+}
+.overlay {
+  display:none !important;
+}
+}
