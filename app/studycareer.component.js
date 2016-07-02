@@ -28,6 +28,7 @@ var StudyCareerComponent = (function () {
         this.windowheight = 0;
         this.scrolling = false;
         this.openLoadDialogEvent = new core_1.EventEmitter();
+        this.openFeedbackDialogEvent = new core_1.EventEmitter();
         this.scrollingObservable = Observable_1.Observable.fromEvent(document, "scroll")
             .debounceTime(300)
             .distinctUntilChanged();
@@ -143,6 +144,10 @@ var StudyCareerComponent = (function () {
         core_1.Output(), 
         __metadata('design:type', Object)
     ], StudyCareerComponent.prototype, "openLoadDialogEvent", void 0);
+    __decorate([
+        core_1.Output(), 
+        __metadata('design:type', Object)
+    ], StudyCareerComponent.prototype, "openFeedbackDialogEvent", void 0);
     StudyCareerComponent = __decorate([
         core_1.Component({
             selector: 'career',

@@ -13,6 +13,7 @@ export class AppComponent implements OnInit{
 
   overlay = false;
   loadDialog = false;
+  feedbackDialog = false;
   program : Year[];
   overlayComp:any;
 
@@ -38,11 +39,18 @@ export class AppComponent implements OnInit{
   openLoadDialog(){
     this.overlay = true;
     this.loadDialog = true;
-    console.log('hi');
+    this.feedbackDialog = false;
+  }
+
+  openFeedback(){
+    this.overlay = true;
+    this.loadDialog = false;
+    this.feedbackDialog = true;
   }
   closeOverlayNow(){
       this.overlay = false;
       this.loadDialog = false;
+      this.feedbackDialog = false;
   }
   closeOverlay(e, overlayComp){
     if (e.target == overlayComp){

@@ -12,7 +12,10 @@
   <button class="fa fa-check"  [class.valid]="isValid()" [title]="isValid()?'Alle volgtijdelijkheden kloppen':'Sommige volgtijdelijkheden zijn fout'"></button>
 
   <div class="credits">
+    <button (click)="openFeedbackDialogEvent.emit('')">Feeback</button>
+    <div>
     <p>Gemaakt door <strong>Pepijn Willekens</strong></p>
     <a href="http://www.pepijnwillekens.com" target="_blank">www.pepijnwillekens.com</a>
+  </div>
   </div>
 </div>

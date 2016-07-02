@@ -28,6 +28,7 @@ export class StudyCareerComponent implements OnInit{
 
 
   @Output() openLoadDialogEvent = new EventEmitter();
+  @Output() openFeedbackDialogEvent = new EventEmitter();
 
   updateVerticalScroll(scroll){
     this.verticalscroll = document.body.scrollTop;

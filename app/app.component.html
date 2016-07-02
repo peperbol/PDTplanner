@@ -1,5 +1,6 @@
 <!--<h1>Persoonlijk Deeltijds Traject planner</h1> -->
-<career [program]="program"  (openLoadDialogEvent)="openLoadDialog()" ></career>
+<career [program]="program"  (openLoadDialogEvent)="openLoadDialog()" (openFeedbackDialogEvent)="openFeedback()" ></career>
 <div #overlayComp class="overlay" *ngIf="overlay" (click)="closeOverlay($event, overlayComp)">
   <dialog *ngIf="loadDialog" class="loaddialog" (loadMdtEvent)="setUrl($event)" (loadJsonEvent)="setProgram($event)"></dialog>
+  <dialog *ngIf="feedbackDialog" class="feedbackdialog"><iframe src="https://docs.google.com/forms/d/1GBjiAjxw5QXAVtIh8qNbbHUMYyNSNgRu4d_RLNzaoXc/viewform?embedded=true" width="760" height="500" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe></dialog>
 </div>

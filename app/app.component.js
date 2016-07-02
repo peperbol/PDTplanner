@@ -17,6 +17,7 @@ var AppComponent = (function () {
         this.programService = programService;
         this.overlay = false;
         this.loadDialog = false;
+        this.feedbackDialog = false;
     }
     AppComponent.prototype.ngOnInit = function () {
         var _this = this;
@@ -36,11 +37,17 @@ var AppComponent = (function () {
     AppComponent.prototype.openLoadDialog = function () {
         this.overlay = true;
         this.loadDialog = true;
-        console.log('hi');
+        this.feedbackDialog = false;
+    };
+    AppComponent.prototype.openFeedback = function () {
+        this.overlay = true;
+        this.loadDialog = false;
+        this.feedbackDialog = true;
     };
     AppComponent.prototype.closeOverlayNow = function () {
         this.overlay = false;
         this.loadDialog = false;
+        this.feedbackDialog = false;
     };
     AppComponent.prototype.closeOverlay = function (e, overlayComp) {
         if (e.target == overlayComp) {

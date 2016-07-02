@@ -470,6 +470,11 @@ course>div.reqgood::after{
   z-index: 16;
   margin: 0;
 }
+.feedbackdialog{
+    background-color: white;
+    border: 2px solid lightgrey;
+    padding: 5px;;
+}
 .loaddialog {
   background-color: white;
   border: 2px solid lightgrey;
@@ -545,6 +550,26 @@ course>div.reqgood::after{
           transform: rotate(90deg);
   letter-spacing: 0.3em;
   font-weight: bolder;
+  text-align: left;
+}
+.credits>* {
+  display: inline-block;
+  vertical-align: middle;
+}
+.credits>button {
+  height: 24px;
+  border: 1px solid LightSlateGray;
+  background: none;
+}
+
+.credits>button:hover {
+  border: 1px solid grey;
+  color:grey;
+
+}
+
+.credits>button+* {
+  margin-left: 10px;
 }
 .credits *{
   margin:0;
