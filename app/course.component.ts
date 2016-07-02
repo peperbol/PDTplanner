@@ -99,6 +99,7 @@ export class CourseComponent {
   moveBack(){this.moveBackEvent.emit(this.course)}
   moveForward(){this.moveForwardEvent.emit(this.course)}
   areRequisitesMet(): boolean{
+    if(this.course.dispensation) return true;
     let good = true;
     for (let i = 0; i < this.course.prerequisites.length; i++) {
         good = good && this.year > this.careerComponent.getYearOf(this.course.prerequisites[i],e=>e.pass);

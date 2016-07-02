@@ -98,6 +98,8 @@ var CourseComponent = (function () {
     CourseComponent.prototype.moveBack = function () { this.moveBackEvent.emit(this.course); };
     CourseComponent.prototype.moveForward = function () { this.moveForwardEvent.emit(this.course); };
     CourseComponent.prototype.areRequisitesMet = function () {
+        if (this.course.dispensation)
+            return true;
         var good = true;
         for (var i = 0; i < this.course.prerequisites.length; i++) {
             good = good && this.year > this.careerComponent.getYearOf(this.course.prerequisites[i], function (e) { return e.pass; });
