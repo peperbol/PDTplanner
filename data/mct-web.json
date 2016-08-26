@@ -50,7 +50,7 @@
         "prerequisites":[],
         "equalrequisites":[],
         "graduationyear":false,
-        "start":1,
+        "start":2,
         "duration":1,
         "studypoints":3,
         "pass": true,
