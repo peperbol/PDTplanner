@@ -455,7 +455,7 @@
       {
         "id":55,
         "name":"Mobile Software 2",
-        "prerequisites":[4,1,10,11,16,17,18,19,20],
+        "prerequisites":[19,21],
         "equalrequisites":[56],
         "graduationyear":false,
         "start":2,
@@ -468,7 +468,7 @@
       {
         "id":56,
         "name":"Game Fundamentals 2",
-        "prerequisites":[4,1,10,11,16,17,18,19,20],
+        "prerequisites":[19,21],
         "equalrequisites":[55],
         "graduationyear":false,
         "start":2,
