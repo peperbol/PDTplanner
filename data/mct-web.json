@@ -471,7 +471,7 @@
         "prerequisites":[16,20,19,18,17,1,4,10,11],
         "equalrequisites":[23,24,25,37,38],
         "graduationyear":false,
-        "start":2,
+        "start":1,
         "duration":1,
         "studypoints":1,
         "pass": true,
