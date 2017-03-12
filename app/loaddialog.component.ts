@@ -1,33 +1,40 @@
-import { Component, Output,EventEmitter } from '@angular/core';
+import { Component, Output,EventEmitter, OnInit } from '@angular/core';
 import { Mobile } from './mobile.service';
+import { ProgramService } from './program.service';
 
 @Component({
   selector: '.loaddialog',
   templateUrl: 'app/loaddialog.component.html',
-  providers: [ Mobile ]
+  providers: [ Mobile, ProgramService ]
 })
-export class LoadDialog {
-  constructor ( private mobile:Mobile){}
+export class LoadDialog implements OnInit {
+  constructor ( private mobile:Mobile, private http: ProgramService){}
 
   filemode = false;
   file:any ;
   filejson:any;
   filename  = "Kies een file...";
 
-  mdtUrl = "data/";
-  mdtOptions = {'MCT: Audio Video':'mct-av.json',
-                'MCT: Web & UX':'mct-web.json',
-                'MCT: Virtual & 3D':'mct-vir.json',
-                }
+  mdtOptions =[];
+  selectedProgram ="";
   selectedMdt ="";
 
   @Output() loadMdtEvent = new EventEmitter();
   @Output() loadJsonEvent = new EventEmitter();
 
-  mdtKeys() : string[] {
-   return Object.keys(this.mdtOptions);
+  mdtPrograms(){
+    return this.mdtOptions.reduce((arr,el)=>(arr.some(e=>e.program == el.program)?arr:arr.concat([el])), []);
   }
+  filteredMdt(){
+      return this.mdtOptions.filter(e=>e.program == this.selectedProgram);
+  }
+  ngOnInit(){
+    this.http.getCareers().subscribe(
+       result => {
+         this.mdtOptions = result;
+       });
 
+  }
   onFileChange(event) {
     this.file = event.srcElement.files[0];
     if(this.file){
@@ -50,7 +57,7 @@ export class LoadDialog {
   }
   loadMdt(){
     if(this.selectedMdt){
-      this.loadMdtEvent.emit(this.mdtUrl+this.selectedMdt)
+      this.loadMdtEvent.emit(this.selectedMdt)
     }
   }
 

@@ -21,7 +21,7 @@ export class AppComponent implements OnInit{
 
   }
   ngOnInit() {
-      this.setUrl('data/mct-web.json');
+      this.setUrl('?limit=1');
       setTimeout(()=>{this.openLoadDialog()},50);
    }
   setUrl(url){

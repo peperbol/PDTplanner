@@ -8,10 +8,19 @@ import './rxjs-operators';
 
 @Injectable()
 export class ProgramService {
-  constructor (private http: Http) {}
 
-  getProgram (name:string): Observable<Year[]> {
-    return this.http.get(name)
+  private url = "http://146.185.168.179:1337/parse/";
+  private header ;
+
+  constructor (private http: Http) {
+    this.header = {headers: new Headers()};
+    this.header.headers.append("X-Parse-Application-Id","PDT") ;
+    this.header.headers.append("Content-Type","application/json");
+  }
+
+
+  getProgram (id:string): Observable<Year[]> {
+    return this.http.get(this.url + "classes/programs/" + id,this.header)
                     .map(this.extractData)
                     .catch(this.handleError);
   }
@@ -19,7 +28,13 @@ export class ProgramService {
 
   private extractData(res: Response) {
     let body = res.json();
-    return body.data || { };
+    return body.years || body.results[0].years || [];
+  }
+
+  getCareers (): Observable<any>{
+    return this.http.get(this.url + "classes/programs?keys=objectId,graduationprogram,program",this.header)
+                    .map((e)=>e.json().results)
+                    .catch(this.handleError)
   }
 
   private handleError (error: any) {

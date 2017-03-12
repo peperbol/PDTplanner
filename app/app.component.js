@@ -21,7 +21,7 @@ var AppComponent = (function () {
     }
     AppComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this.setUrl('data/mct-web.json');
+        this.setUrl('?limit=1');
         setTimeout(function () { _this.openLoadDialog(); }, 50);
     };
     AppComponent.prototype.setUrl = function (url) {

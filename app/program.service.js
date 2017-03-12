@@ -10,20 +10,30 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var http_1 = require('@angular/http');
+var http_2 = require('@angular/http');
 var Observable_1 = require('rxjs/Observable');
 require('./rxjs-operators');
 var ProgramService = (function () {
     function ProgramService(http) {
         this.http = http;
+        this.url = "http://146.185.168.179:1337/parse/";
+        this.header = { headers: new http_2.Headers() };
+        this.header.headers.append("X-Parse-Application-Id", "PDT");
+        this.header.headers.append("Content-Type", "application/json");
     }
-    ProgramService.prototype.getProgram = function (name) {
-        return this.http.get(name)
+    ProgramService.prototype.getProgram = function (id) {
+        return this.http.get(this.url + "classes/programs/" + id, this.header)
             .map(this.extractData)
             .catch(this.handleError);
     };
     ProgramService.prototype.extractData = function (res) {
         var body = res.json();
-        return body.data || {};
+        return body.years || body.results[0].years || [];
+    };
+    ProgramService.prototype.getCareers = function () {
+        return this.http.get(this.url + "classes/programs?keys=objectId,graduationprogram,program", this.header)
+            .map(function (e) { return e.json().results; })
+            .catch(this.handleError);
     };
     ProgramService.prototype.handleError = function (error) {
         // In a real world app, we might use a remote logging infrastructure

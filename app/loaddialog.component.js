@@ -8,24 +8,34 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('@angular/core');
-var mobile_service_1 = require('./mobile.service');
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = require("@angular/core");
+var mobile_service_1 = require("./mobile.service");
+var program_service_1 = require("./program.service");
 var LoadDialog = (function () {
-    function LoadDialog(mobile) {
+    function LoadDialog(mobile, http) {
         this.mobile = mobile;
+        this.http = http;
         this.filemode = false;
         this.filename = "Kies een file...";
-        this.mdtUrl = "data/";
-        this.mdtOptions = { 'MCT: Audio Video': 'mct-av.json',
-            'MCT: Web & UX': 'mct-web.json',
-            'MCT: Virtual & 3D': 'mct-vir.json',
-        };
+        this.mdtOptions = [];
+        this.selectedProgram = "";
         this.selectedMdt = "";
         this.loadMdtEvent = new core_1.EventEmitter();
         this.loadJsonEvent = new core_1.EventEmitter();
     }
-    LoadDialog.prototype.mdtKeys = function () {
-        return Object.keys(this.mdtOptions);
+    LoadDialog.prototype.mdtPrograms = function () {
+        return this.mdtOptions.reduce(function (arr, el) { return (arr.some(function (e) { return e.program == el.program; }) ? arr : arr.concat([el])); }, []);
+    };
+    LoadDialog.prototype.filteredMdt = function () {
+        var _this = this;
+        return this.mdtOptions.filter(function (e) { return e.program == _this.selectedProgram; });
+    };
+    LoadDialog.prototype.ngOnInit = function () {
+        var _this = this;
+        this.http.getCareers().subscribe(function (result) {
+            _this.mdtOptions = result;
+        });
     };
     LoadDialog.prototype.onFileChange = function (event) {
         this.file = event.srcElement.files[0];
@@ -47,7 +57,7 @@ var LoadDialog = (function () {
     };
     LoadDialog.prototype.loadMdt = function () {
         if (this.selectedMdt) {
-            this.loadMdtEvent.emit(this.mdtUrl + this.selectedMdt);
+            this.loadMdtEvent.emit(this.selectedMdt);
         }
     };
     LoadDialog.prototype.loadFile = function () {
@@ -55,22 +65,22 @@ var LoadDialog = (function () {
             this.loadJsonEvent.emit(this.filejson);
         }
     };
-    __decorate([
-        core_1.Output(), 
-        __metadata('design:type', Object)
-    ], LoadDialog.prototype, "loadMdtEvent", void 0);
-    __decorate([
-        core_1.Output(), 
-        __metadata('design:type', Object)
-    ], LoadDialog.prototype, "loadJsonEvent", void 0);
-    LoadDialog = __decorate([
-        core_1.Component({
-            selector: '.loaddialog',
-            templateUrl: 'app/loaddialog.component.html',
-            providers: [mobile_service_1.Mobile]
-        }), 
-        __metadata('design:paramtypes', [mobile_service_1.Mobile])
-    ], LoadDialog);
     return LoadDialog;
 }());
+__decorate([
+    core_1.Output(),
+    __metadata("design:type", Object)
+], LoadDialog.prototype, "loadMdtEvent", void 0);
+__decorate([
+    core_1.Output(),
+    __metadata("design:type", Object)
+], LoadDialog.prototype, "loadJsonEvent", void 0);
+LoadDialog = __decorate([
+    core_1.Component({
+        selector: '.loaddialog',
+        templateUrl: 'app/loaddialog.component.html',
+        providers: [mobile_service_1.Mobile, program_service_1.ProgramService]
+    }),
+    __metadata("design:paramtypes", [mobile_service_1.Mobile, program_service_1.ProgramService])
+], LoadDialog);
 exports.LoadDialog = LoadDialog;
