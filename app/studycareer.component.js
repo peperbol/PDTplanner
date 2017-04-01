@@ -29,6 +29,7 @@ var StudyCareerComponent = (function () {
         this.scrolling = false;
         this.openLoadDialogEvent = new core_1.EventEmitter();
         this.openFeedbackDialogEvent = new core_1.EventEmitter();
+        this.reload = new core_1.EventEmitter();
         this.scrollingObservable = Observable_1.Observable.fromEvent(document, "scroll")
             .debounceTime(300)
             .distinctUntilChanged();
@@ -110,6 +111,9 @@ var StudyCareerComponent = (function () {
         var _this = this;
         setTimeout(function () { return _this.updateVerticalScroll(false); }, 50);
     };
+    StudyCareerComponent.prototype.reloadMDT = function () {
+        this.reload.emit();
+    };
     StudyCareerComponent.prototype.openLoadDialog = function () {
         this.openLoadDialogEvent.emit({});
     };
@@ -148,6 +152,10 @@ var StudyCareerComponent = (function () {
         core_1.Output(), 
         __metadata('design:type', Object)
     ], StudyCareerComponent.prototype, "openFeedbackDialogEvent", void 0);
+    __decorate([
+        core_1.Output(), 
+        __metadata('design:type', Object)
+    ], StudyCareerComponent.prototype, "reload", void 0);
     StudyCareerComponent = __decorate([
         core_1.Component({
             selector: 'career',

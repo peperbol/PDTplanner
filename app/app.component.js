@@ -26,6 +26,7 @@ var AppComponent = (function () {
     };
     AppComponent.prototype.setUrl = function (url) {
         var _this = this;
+        this.url = url;
         this.programService.getProgram(url)
             .subscribe(function (result) { _this.program = result; }, function (error) { console.log(error); });
         this.closeOverlayNow();
@@ -38,6 +39,9 @@ var AppComponent = (function () {
         this.overlay = true;
         this.loadDialog = true;
         this.feedbackDialog = false;
+    };
+    AppComponent.prototype.reloadMDT = function () {
+        this.setUrl(this.url);
     };
     AppComponent.prototype.openFeedback = function () {
         this.overlay = true;

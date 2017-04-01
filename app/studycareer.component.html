@@ -4,6 +4,7 @@
   </li>
 </ul>
 <div class="tools" #tools [style.top.px]="verticalscroll" [class.hidden]="scrolling" (window:resize)="updateVerticalScroll(true)" (document:scroll)="updateVerticalScroll(true)">
+  <button class="fa fa-refresh" (click)="reloadMDT()" title="Herstel MDT"></button>
   <button class="fa fa-folder-open-o" (click)="openLoadDialog()" title="Laad studietraject"></button>
   <button class="fa fa-floppy-o" (click)="saveFile()" [class.disabled]="mobile.mobileAndTabletcheck()" title="Sla studietraject op"></button>
   <hr>

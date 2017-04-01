@@ -29,6 +29,7 @@ export class StudyCareerComponent implements OnInit{
 
   @Output() openLoadDialogEvent = new EventEmitter();
   @Output() openFeedbackDialogEvent = new EventEmitter();
+  @Output() reload = new EventEmitter();
 
   updateVerticalScroll(scroll){
     this.verticalscroll = document.body.scrollTop;
@@ -117,7 +118,9 @@ export class StudyCareerComponent implements OnInit{
       setTimeout(()=>this.updateVerticalScroll(false),50);
    }
 
-
+  reloadMDT(){
+    this.reload.emit();
+  }
   openLoadDialog(){
     this.openLoadDialogEvent.emit({});
   }
