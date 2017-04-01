@@ -31,7 +31,7 @@ export class LoadDialog implements OnInit {
   ngOnInit(){
     this.http.getCareers().subscribe(
        result => {
-         this.mdtOptions = result;
+         this.mdtOptions = result.sort(function(a,b){return (a.program + a.graduationprogram).localeCompare(b.program + b.graduationprogram);});
        });
 
   }
