@@ -16,6 +16,7 @@ export class AppComponent implements OnInit{
   feedbackDialog = false;
   program : Year[];
   overlayComp:any;
+  url:"";
 
   constructor (private programService:ProgramService){
 
@@ -25,6 +26,7 @@ export class AppComponent implements OnInit{
       setTimeout(()=>{this.openLoadDialog()},50);
    }
   setUrl(url){
+    this.url = url;
     this.programService.getProgram(url)
                        .subscribe(
                           result => {this.program = result},
@@ -41,7 +43,9 @@ export class AppComponent implements OnInit{
     this.loadDialog = true;
     this.feedbackDialog = false;
   }
-
+  reloadMDT(){
+    this.setUrl(this.url);
+  }
   openFeedback(){
     this.overlay = true;
     this.loadDialog = false;

@@ -63,7 +63,8 @@ hr{
 }
 
 .tools>button.fa-folder-open-o,
-.tools>button.fa-check
+.tools>button.fa-check,
+.tools>button.fa-refresh
 {
     font-size: 0.8em;
     margin-top: 2px;

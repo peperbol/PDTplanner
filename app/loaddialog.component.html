@@ -7,13 +7,13 @@
   <div *ngIf="!filemode">
     <select [(ngModel)]=selectedProgram>
       <option value="" *ngIf="!selectedMdt" >
-        Selecteer
+        Opleiding
       </option>
       <option *ngFor="let mdt of mdtPrograms(); let i  = index" [value]="mdt.program" >{{mdt.program}}</option>
     </select>
     <select [(ngModel)]=selectedMdt [class.disabled]="!selectedProgram" >
       <option value="" *ngIf="!selectedMdt" >
-        Selecteer
+        Afstudeerrichting
       </option>
       <option *ngFor="let mdt of filteredMdt(); let i  = index" [value]="mdt.objectId" >{{mdt.graduationprogram}}</option>
     </select>
