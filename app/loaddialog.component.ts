@@ -23,10 +23,12 @@ export class LoadDialog implements OnInit {
   @Output() loadJsonEvent = new EventEmitter();
 
   mdtPrograms(){
-    return this.mdtOptions.reduce((arr,el)=>(arr.some(e=>e.program == el.program)?arr:arr.concat([el])), []);
+    return this.mdtOptions.reduce((arr,el)=>(arr.some(e=>e.program == el.program)?arr:arr.concat([el])), [])
+    .sort(function(a, b) { return (a.program.toUpperCase() < b.program.toUpperCase())? -1:((a.program.toUpperCase() > b.program.toUpperCase())?1:0)});
   }
   filteredMdt(){
-      return this.mdtOptions.filter(e=>e.program == this.selectedProgram);
+      return this.mdtOptions.filter(e=>e.program == this.selectedProgram)
+      .sort(function(a, b) { return (a.graduationprogram.toUpperCase() < b.graduationprogram.toUpperCase())? -1:((a.graduationprogram.toUpperCase() > b.graduationprogram.toUpperCase())?1:0)});
   }
   ngOnInit(){
     this.http.getCareers().subscribe(
@@ -60,7 +62,6 @@ export class LoadDialog implements OnInit {
       this.loadMdtEvent.emit(this.selectedMdt)
     }
   }
-
   loadFile(){
     if(this.filejson){
       this.loadJsonEvent.emit(this.filejson)

@@ -25,11 +25,13 @@ var LoadDialog = (function () {
         this.loadJsonEvent = new core_1.EventEmitter();
     }
     LoadDialog.prototype.mdtPrograms = function () {
-        return this.mdtOptions.reduce(function (arr, el) { return (arr.some(function (e) { return e.program == el.program; }) ? arr : arr.concat([el])); }, []);
+        return this.mdtOptions.reduce(function (arr, el) { return (arr.some(function (e) { return e.program == el.program; }) ? arr : arr.concat([el])); }, [])
+            .sort(function (a, b) { return (a.program.toUpperCase() < b.program.toUpperCase()) ? -1 : ((a.program.toUpperCase() > b.program.toUpperCase()) ? 1 : 0); });
     };
     LoadDialog.prototype.filteredMdt = function () {
         var _this = this;
-        return this.mdtOptions.filter(function (e) { return e.program == _this.selectedProgram; });
+        return this.mdtOptions.filter(function (e) { return e.program == _this.selectedProgram; })
+            .sort(function (a, b) { return (a.graduationprogram.toUpperCase() < b.graduationprogram.toUpperCase()) ? -1 : ((a.graduationprogram.toUpperCase() > b.graduationprogram.toUpperCase()) ? 1 : 0); });
     };
     LoadDialog.prototype.ngOnInit = function () {
         var _this = this;
